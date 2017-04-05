@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:gravity="center"
+    android:onClick="tapScreen"
     tools:context="com.example.android.educationalapp.MainActivity">
 
     <VideoView

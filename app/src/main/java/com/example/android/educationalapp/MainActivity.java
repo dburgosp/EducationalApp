@@ -4,6 +4,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.VideoView;
@@ -45,7 +46,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * Stops video when tapping on screen.
+     *
+     * @param: View from which the method is called.
+     */
+    protected void tapScreen(View view) {
+        //videoView.stopPlayback();
+        videoView.seekTo(videoView.getDuration());
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -64,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        currentVideoPosition=savedInstanceState.getInt("currentVideoPosition");
+        currentVideoPosition = savedInstanceState.getInt("currentVideoPosition");
         /*
         goalsTeamA = savedInstanceState.getInt("goalsTeamA");
         goalsTeamB = savedInstanceState.getInt("goalsTeamB");
