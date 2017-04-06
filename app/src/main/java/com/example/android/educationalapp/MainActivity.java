@@ -12,11 +12,11 @@ import android.widget.VideoView;
 public class MainActivity extends AppCompatActivity {
     VideoView videoView;
     int currentVideoPosition = -1;
+    Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Uri uri;
 
         // Hide title bar.
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         //getSupportActionBar().hide();
 
         setContentView(R.layout.activity_main);
-        //Toast.makeText(this, "Tap screen to skip intro", Toast.LENGTH_LONG);
 
         // Play intro video.
         if (savedInstanceState != null) {
@@ -37,23 +36,29 @@ public class MainActivity extends AppCompatActivity {
         videoView.setVideoURI(uri);
         videoView.start();
 
-        // When intro video ends, show activity_main_menu.
+        // Define custom behaviour when intro video ends.
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                setContentView(R.layout.activity_main_menu);
+                terminateIntro();
             }
         });
     }
 
     /**
-     * Stops video when tapping on screen.
-     *
-     * @param: View from which the method is called.
+     * Things to do when user taps on the screen.
      */
     protected void tapScreen(View view) {
-        //videoView.stopPlayback();
-        videoView.seekTo(videoView.getDuration());
+        terminateIntro();
+    }
+
+    /**
+     * When intro ends or is interrupted, the next active content view is activity_main_menu.
+     */
+    void terminateIntro()
+    {
+        // Show activity_main_menu.
+        setContentView(R.layout.activity_main_menu);
     }
 
     @Override
