@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Aplicación Educacional</string>
     <string name="main_menu_title">Hazte Maestro Jedi</string>
+    <string name="main_menu_description">Contesta correctamente 10 preguntas para recibir tu diploma de Maestro Jedi. Si fallas en algún momento tendrás que empezar de nuevo. Las preguntas son aleatorias, así que cada vez que reinicies el test probablemente te enfrentarás a un reto diferente. Normalmente tendrás que elegir una única respuesta correcta entre varias opciones, pero algunas respuestas son de selección múltiple o incluso de texto libre. ¡Que la Fuerza te acompañe!</string>
 </resources>

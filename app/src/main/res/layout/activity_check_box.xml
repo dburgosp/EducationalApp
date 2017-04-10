@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context="com.example.android.educationalapp.CheckBoxActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Death Star"
+        android:src="@drawable/main_menu_bg" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium_margin_padding_size"
+        android:alpha="0.5"
+        android:background="@drawable/bg_layer" />
+
+
+    <ImageView
+        android:id="@+id/star_wars_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/medium_margin_padding_size"
+        android:layout_marginTop="@dimen/max_margin_padding_size"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/main_menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/star_wars_logo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/main_menu_title"
+        android:textAllCaps="true"
+        android:textColor="#ffff00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/main_menu_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_title"
+        android:layout_margin="@dimen/max_margin_padding_size"
+        android:gravity="center_horizontal"
+        android:text="@string/main_menu_description"
+        android:textColor="@android:color/white" />
+
+    <CheckBox
+        android:id="@+id/checkbox_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_description"
+        android:layout_margin="@dimen/max_margin_padding_size"
+        android:text="answer 1"
+        android:textColor="@android:color/white"/>
+
+    <CheckBox
+        android:id="@+id/checkbox_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_description"
+        android:layout_margin="@dimen/max_margin_padding_size"
+        android:text="answer 2"
+        android:textColor="@android:color/white"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_description"
+        android:layout_margin="@dimen/max_margin_padding_size"
+        android:text="answer 3"
+        android:textColor="@android:color/white"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_description"
+        android:layout_margin="@dimen/max_margin_padding_size"
+        android:text="answer 4"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/main_menu_start_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/max_margin_padding_size"
+        android:background="@drawable/bg_layer"
+        android:onClick="beginTest"
+        android:paddingBottom="@dimen/min_margin_padding_size"
+        android:paddingLeft="@dimen/medium_margin_padding_size"
+        android:paddingRight="@dimen/medium_margin_padding_size"
+        android:paddingTop="@dimen/min_margin_padding_size"
+        android:text="@string/main_menu_button"
+        android:textColor="#ffff00"
+        android:textStyle="bold" />
+
+</RelativeLayout>
