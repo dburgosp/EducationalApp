@@ -19,6 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenuActivity" />
+        <activity android:name=".EditTextActivity" />
+        <activity android:name=".RadioButtonActivity" />
+        <activity android:name=".CheckBoxActivity" />
     </application>
 
 </manifest>

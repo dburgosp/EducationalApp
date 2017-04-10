@@ -1,5 +1,6 @@
 package com.example.android.educationalapp;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     VideoView videoView;
     int currentVideoPosition = -1;
     Uri uri;
+    MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             currentVideoPosition = savedInstanceState.getInt("currentVideoPosition");
         }
         videoView = (VideoView) findViewById(R.id.video_view);
-        uri = Uri.parse("android.resource://" + this.getPackageName() + "/" + R.raw.intro_es);
+        uri = Uri.parse("android.resource://" + this.getPackageName() + "/" + R.raw.intro);
         //videoView.setOnPreparedListener(this);
         videoView.setKeepScreenOn(true);
         videoView.setVideoURI(uri);
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Things to do when user taps on the screen.
      */
-    protected void tapScreen(View view) {
+    void tapScreen(View view) {
         terminateIntro();
     }
 
@@ -58,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
     void terminateIntro()
     {
         // Show activity_main_menu.
-        setContentView(R.layout.activity_main_menu);
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
     }
 
     @Override

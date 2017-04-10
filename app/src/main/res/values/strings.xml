@@ -4,4 +4,8 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="main_menu_title">Become a Jedi Master</string>
+    <string name="main_menu_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum nulla dui, quis viverra libero imperdiet vitae. In sit amet venenatis nibh, eget tempor risus. Fusce in neque blandit, porttitor metus condimentum, tempus enim. Pellentesque mauris magna, luctus eget ligula vel, convallis interdum libero.</string>
+    <string name="main_menu_button">Start Quiz</string>
 </resources>
