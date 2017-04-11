@@ -12,7 +12,6 @@ import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
     VideoView videoView;
-    int currentVideoPosition = -1;
     Uri uri;
     MediaPlayer mMediaPlayer;
 
@@ -28,15 +27,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Play intro video.
-        if (savedInstanceState != null) {
-            currentVideoPosition = savedInstanceState.getInt("currentVideoPosition");
-        }
         videoView = (VideoView) findViewById(R.id.video_view);
         uri = Uri.parse("android.resource://" + this.getPackageName() + "/" + R.raw.intro);
         //videoView.setOnPreparedListener(this);
         videoView.setKeepScreenOn(true);
         videoView.setVideoURI(uri);
         videoView.start();
+        if (savedInstanceState != null) {
+            super.onRestoreInstanceState(savedInstanceState);
+            videoView.seekTo(savedInstanceState.getInt("currentVideoPosition"));
+        }
 
         // Define custom behaviour when intro video ends.
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -57,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * When intro ends or is interrupted, the next active content view is activity_main_menu.
      */
-    void terminateIntro()
-    {
+    void terminateIntro() {
         // Show activity_main_menu.
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
@@ -66,31 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
         outState.putInt("currentVideoPosition", videoView.getCurrentPosition());
-        /*
-        outState.putInt("goalsTeamA", goalsTeamA);
-        outState.putInt("goalsTeamB", goalsTeamB);
-        outState.putInt("yellowCardsTeamA", yellowCardsTeamA);
-        outState.putInt("yellowCardsTeamB", yellowCardsTeamB);
-        outState.putInt("redCardsTeamA", redCardsTeamA);
-        outState.putInt("redCardsTeamB", redCardsTeamB);
-        */
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        currentVideoPosition = savedInstanceState.getInt("currentVideoPosition");
-        /*
-        goalsTeamA = savedInstanceState.getInt("goalsTeamA");
-        goalsTeamB = savedInstanceState.getInt("goalsTeamB");
-        yellowCardsTeamA = savedInstanceState.getInt("yellowCardsTeamA");
-        yellowCardsTeamB = savedInstanceState.getInt("yellowCardsTeamB");
-        redCardsTeamA = savedInstanceState.getInt("redCardsTeamA");
-        redCardsTeamB = savedInstanceState.getInt("redCardsTeamB");
-
-        displayAllScores();
-        */
+        videoView.pause();
+        super.onSaveInstanceState(outState);
     }
 }

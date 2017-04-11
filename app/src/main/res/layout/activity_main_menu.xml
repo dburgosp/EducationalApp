@@ -43,9 +43,10 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
+
     <TextView
         android:id="@+id/main_menu_description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/main_menu_title"
         android:layout_margin="@dimen/max_margin_padding_size"
@@ -53,22 +54,22 @@
         android:text="@string/main_menu_description"
         android:textColor="@android:color/white" />
 
-    <TextView
-        android:id="@+id/main_menu_start_quiz"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/max_margin_padding_size"
-        android:background="@drawable/bg_layer"
-        android:onClick="beginTest"
-        android:paddingBottom="@dimen/min_margin_padding_size"
-        android:paddingLeft="@dimen/medium_margin_padding_size"
-        android:paddingRight="@dimen/medium_margin_padding_size"
-        android:paddingTop="@dimen/min_margin_padding_size"
-        android:text="@string/main_menu_button"
-        android:textColor="#ffff00"
-        android:textStyle="bold" />
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
+        <TextView
+            style="@style/CommonButton"
+            android:onClick="beginTest"
+            android:text="@string/begin_test" />
+
+        <TextView
+            style="@style/CommonButton"
+            android:onClick="hallOfFame"
+            android:text="@string/hall_of_fame" />
+    </LinearLayout>
 
 </RelativeLayout>

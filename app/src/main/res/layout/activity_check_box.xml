@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -60,7 +59,7 @@
         android:layout_below="@id/main_menu_description"
         android:layout_margin="@dimen/max_margin_padding_size"
         android:text="answer 1"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
     <CheckBox
         android:id="@+id/checkbox_1"
@@ -69,7 +68,7 @@
         android:layout_below="@id/main_menu_description"
         android:layout_margin="@dimen/max_margin_padding_size"
         android:text="answer 2"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -77,7 +76,7 @@
         android:layout_below="@id/main_menu_description"
         android:layout_margin="@dimen/max_margin_padding_size"
         android:text="answer 3"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -85,7 +84,7 @@
         android:layout_below="@id/main_menu_description"
         android:layout_margin="@dimen/max_margin_padding_size"
         android:text="answer 4"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/main_menu_start_quiz"
@@ -100,7 +99,7 @@
         android:paddingLeft="@dimen/medium_margin_padding_size"
         android:paddingRight="@dimen/medium_margin_padding_size"
         android:paddingTop="@dimen/min_margin_padding_size"
-        android:text="@string/main_menu_button"
+        android:text="@string/begin_test"
         android:textColor="#ffff00"
         android:textStyle="bold" />
 

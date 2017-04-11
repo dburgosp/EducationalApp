@@ -7,5 +7,7 @@
 
     <string name="main_menu_title">Become a Jedi Master</string>
     <string name="main_menu_description">Answer correctly 10 questions to receive your Jedi Master Diploma. If you fail at some point you will have to start over. The questions are random, so every time you restart the test you will probably face a different challenge. Most of the time you will have to choose a single correct answer from several options, but some answers are multiple selection or even free text. May the Force be with you!</string>
-    <string name="main_menu_button">Start Quiz</string>
+    <string name="begin_test">Begin Test</string>
+    <string name="hall_of_fame">Hall of Fame</string>
+    <string name="go_back">Back</string>
 </resources>

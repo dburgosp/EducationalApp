@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.example.android.educationalapp.DiplomaActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Diploma"
+        android:scaleType="centerCrop"
+        android:src="@drawable/jedi_masters" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium_margin_padding_size"
+        android:alpha="0.5"
+        android:background="@drawable/bg_layer" />
+
+    <TextView
+        android:id="@+id/main_menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/max_margin_padding_size"
+        android:text="Diploma"
+        android:textAllCaps="true"
+        android:textColor="#ffff00"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/main_menu_line_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_title"
+        android:layout_marginLeft="@dimen/max_margin_padding_size"
+        android:layout_marginRight="@dimen/max_margin_padding_size"
+        android:gravity="center_horizontal"
+        android:text="‎The Jedi High Council certifies that"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/main_menu_line_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_line_1"
+        android:layout_marginBottom="@dimen/min_margin_padding_size"
+        android:layout_marginLeft="@dimen/max_margin_padding_size"
+        android:layout_marginRight="@dimen/max_margin_padding_size"
+        android:layout_marginTop="@dimen/min_margin_padding_size"
+        android:gravity="center_horizontal"
+        android:text="David Burgos Prieto"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/main_menu_line_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_line_2"
+        android:layout_marginLeft="@dimen/max_margin_padding_size"
+        android:layout_marginRight="@dimen/max_margin_padding_size"
+        android:gravity="center_horizontal"
+        android:text="has succesfully completed the required studies and fulfilled the requeriments of this Academy and, in testimony whereof, has been recognized to the title of"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/main_menu_line_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_line_3"
+        android:layout_marginBottom="@dimen/medium_margin_padding_size"
+        android:layout_marginLeft="@dimen/max_margin_padding_size"
+        android:layout_marginRight="@dimen/max_margin_padding_size"
+        android:layout_marginTop="@dimen/min_margin_padding_size"
+        android:gravity="center_horizontal"
+        android:text="Jedi Master"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_menu_line_4"
+        android:layout_marginLeft="@dimen/max_margin_padding_size"
+        android:layout_marginRight="@dimen/max_margin_padding_size"
+        android:gravity="center_horizontal"
+        android:text="Issued in a galaxy far, far away, on April 11, 2017"
+        android:textColor="@android:color/white"
+        android:textSize="12dp" />
+
+    <TextView
+        style="@style/CommonButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="hallOfFame"
+        android:text="@string/hall_of_fame" />
+
+</RelativeLayout>

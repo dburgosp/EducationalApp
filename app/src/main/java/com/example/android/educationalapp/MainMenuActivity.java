@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class MainMenuActivity extends AppCompatActivity {
+    Bundle outState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,16 @@ public class MainMenuActivity extends AppCompatActivity {
         MediaPlayer mediaPlayer = MediaPlayer.create(MainMenuActivity.this, R.raw.light_saber);
         mediaPlayer.start();
 
-        Intent intent = new Intent(this, EditTextActivity.class);
+        //Intent intent = new Intent(this, EditTextActivity.class);
+        Intent intent = new Intent(this, DiplomaActivity.class);
+        startActivity(intent);
+    }
+
+    void hallOfFame(View view) {
+        MediaPlayer mediaPlayer = MediaPlayer.create(MainMenuActivity.this, R.raw.light_saber);
+        mediaPlayer.start();
+
+        Intent intent = new Intent(this, HallOfFameActivity.class);
         startActivity(intent);
     }
 
