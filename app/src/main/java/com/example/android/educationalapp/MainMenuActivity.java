@@ -38,7 +38,7 @@ public class MainMenuActivity extends AppCompatActivity {
         mediaPlayer.start();
 
         //Intent intent = new Intent(this, EditTextActivity.class);
-        Intent intent = new Intent(this, DiplomaActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
@@ -47,6 +47,12 @@ public class MainMenuActivity extends AppCompatActivity {
         mediaPlayer.start();
 
         Intent intent = new Intent(this, HallOfFameActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

@@ -24,10 +24,6 @@ public class DiplomaActivity extends AppCompatActivity {
         // Play the music.
         mediaPlayer = MediaPlayer.create(DiplomaActivity.this, R.raw.the_throne_room);
         mediaPlayer.start();
-        if (savedInstanceState != null) {
-            super.onRestoreInstanceState(savedInstanceState);
-            mediaPlayer.seekTo(savedInstanceState.getInt("currentAudioPosition"));
-        }
 
         // Define custom behaviour when music ends.
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -38,21 +34,24 @@ public class DiplomaActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        // Stops music and go back to the main menu.
+        mediaPlayer.pause();
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
+    }
+
     void endDiploma() {
         Intent intent = new Intent(this, HallOfFameActivity.class);
         startActivity(intent);
     }
 
     void hallOfFame(View view) {
+        // Play a sound.
         MediaPlayer mediaPlayer = MediaPlayer.create(DiplomaActivity.this, R.raw.light_saber);
         mediaPlayer.start();
-        endDiploma();
-    }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt("currentAudioPosition", mediaPlayer.getCurrentPosition());
-        mediaPlayer.pause();
-        super.onSaveInstanceState(outState);
+        endDiploma();
     }
 }

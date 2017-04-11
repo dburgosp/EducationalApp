@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,17 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+
         // Play intro video.
         videoView = (VideoView) findViewById(R.id.video_view);
         uri = Uri.parse("android.resource://" + this.getPackageName() + "/" + R.raw.intro);
-        //videoView.setOnPreparedListener(this);
-        videoView.setKeepScreenOn(true);
+        //videoView.setKeepScreenOn(true);
         videoView.setVideoURI(uri);
         videoView.start();
-        if (savedInstanceState != null) {
-            super.onRestoreInstanceState(savedInstanceState);
-            videoView.seekTo(savedInstanceState.getInt("currentVideoPosition"));
-        }
 
         // Define custom behaviour when intro video ends.
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -45,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
                 terminateIntro();
             }
         });
+
+        Toast toast = Toast.makeText(this, R.string.intro_toast, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     /**
@@ -61,12 +61,5 @@ public class MainActivity extends AppCompatActivity {
         // Show activity_main_menu.
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt("currentVideoPosition", videoView.getCurrentPosition());
-        videoView.pause();
-        super.onSaveInstanceState(outState);
     }
 }

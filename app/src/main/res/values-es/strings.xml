@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Aplicación Educacional</string>
     <string name="main_menu_title">Hazte Maestro Jedi</string>
     <string name="main_menu_description">Contesta correctamente 10 preguntas para recibir tu diploma de Maestro Jedi. Si fallas en algún momento tendrás que empezar de nuevo. Las preguntas son aleatorias, así que cada vez que reinicies el test probablemente te enfrentarás a un reto diferente. Normalmente tendrás que elegir una única respuesta correcta entre varias opciones, pero algunas respuestas son de selección múltiple o incluso de texto libre. ¡Que la Fuerza te acompañe!</string>
     <string name="hall_of_fame">Mejores puntuaciones</string>
     <string name="go_back">Volver</string>
     <string name="begin_test">Comenzar</string>
+    <string name="intro_toast">Toca la pantalla para saltar la intro</string>
+    <string name="type_your_name">Escribe aquí tu nombre, joven Padawan (máximo 16 caracteres):</string>
+    <string name="type_your_name_hint">Luke Skywalker</string>
+    <string name="type_your_name_error">El nombre no puede estar vacío</string>
+    <string name="question_title">Pregunta nº <xliff:g example="2" id="quantity">%d</xliff:g></string>
+    <string name="check_box_description">Esta pregunta puede tener múltiples respuestas.</string>
+    <string name="submit_answer">Enviar respuesta</string>
 </resources>

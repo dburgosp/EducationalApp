@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context="com.example.android.educationalapp.MainMenuActivity">
+    tools:context="com.example.android.educationalapp.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="Death Star"
+        android:contentDescription="Diploma"
         android:src="@drawable/main_menu_bg" />
 
     <ImageView
@@ -31,43 +31,37 @@
         android:src="@drawable/logo" />
 
     <TextView
-        android:id="@+id/main_menu_title"
-        android:layout_width="wrap_content"
+        android:id="@+id/type_your_name"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/star_wars_logo"
-        android:layout_centerHorizontal="true"
-        android:text="@string/main_menu_title"
-        android:textAllCaps="true"
-        android:textColor="#ffff00"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/main_menu_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/main_menu_title"
-        android:layout_margin="@dimen/max_margin_padding_size"
+        android:layout_marginLeft="@dimen/max_margin_padding_size"
+        android:layout_marginRight="@dimen/max_margin_padding_size"
+        android:layout_marginTop="@dimen/medium_margin_padding_size"
         android:gravity="center_horizontal"
-        android:text="@string/main_menu_description"
+        android:text="@string/type_your_name"
         android:textColor="@android:color/white" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_below="@id/type_your_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/max_margin_padding_size"
+        android:layout_marginRight="@dimen/max_margin_padding_size"
+        android:layout_marginTop="@dimen/medium_margin_padding_size"
+        android:gravity="center"
+        android:hint="@string/type_your_name_hint"
+        android:maxLength="16"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
 
-        <TextView
-            style="@style/CommonButton"
-            android:onClick="beginTest"
-            android:text="@string/begin_test" />
-
-        <TextView
-            style="@style/CommonButton"
-            android:onClick="hallOfFame"
-            android:text="@string/hall_of_fame" />
-    </LinearLayout>
+    <TextView
+        style="@style/CommonButton"
+        android:layout_below="@id/edit_text"
+        android:layout_centerHorizontal="true"
+        android:onClick="beginTest"
+        android:text="@string/begin_test" />
 
 </RelativeLayout>

@@ -28,6 +28,6 @@ public class HallOfFameActivity extends AppCompatActivity {
         MediaPlayer mediaPlayer = MediaPlayer.create(HallOfFameActivity.this, R.raw.light_saber);
         mediaPlayer.start();
 
-        this.finish();
+        onBackPressed();
     }
 }
