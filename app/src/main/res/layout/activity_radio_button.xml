@@ -22,6 +22,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/medium_margin_padding_size"
+            android:layout_marginRight="@dimen/medium_margin_padding_size"
+            android:layout_marginTop="@dimen/medium_margin_padding_size"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -33,7 +36,7 @@
                 android:layout_marginBottom="@dimen/min_margin_padding_size"
                 android:layout_marginLeft="@dimen/max_margin_padding_size"
                 android:layout_marginRight="@dimen/max_margin_padding_size"
-                android:layout_marginTop="@dimen/max_margin_padding_size"
+                android:layout_marginTop="@dimen/min_margin_padding_size"
                 android:text="@string/main_menu_title"
                 android:textAllCaps="true"
                 android:textColor="#ffff00"
@@ -52,67 +55,58 @@
                 android:textColor="#ffff00"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/check_box_description"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/main_menu_title"
-                android:layout_marginLeft="@dimen/max_margin_padding_size"
-                android:layout_marginRight="@dimen/max_margin_padding_size"
-                android:layout_marginTop="@dimen/medium_margin_padding_size"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/medium_margin_padding_size"
+                android:gravity="center_horizontal"
+                android:text="Question"
+                android:textColor="@android:color/white" />
 
-                <TextView
-                    android:id="@+id/check_box_description"
-                    android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/checkbox_1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/main_menu_title"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/medium_margin_padding_size"
-                    android:gravity="center_horizontal"
-                    android:text="Question"
+                    android:layout_below="@id/check_box_description"
+                    android:buttonTint="#ffff00"
+                    android:text="answer 1"
                     android:textColor="@android:color/white" />
 
-                <RadioGroup
+                <RadioButton
+                    android:id="@+id/checkbox_2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkbox_1"
+                    android:buttonTint="#ffff00"
+                    android:text="answer 2"
+                    android:textColor="@android:color/white" />
 
-                    <RadioButton
-                        android:id="@+id/checkbox_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/check_box_description"
-                        android:buttonTint="#ffff00"
-                        android:text="answer 1"
-                        android:textColor="@android:color/white" />
+                <RadioButton
+                    android:id="@+id/checkbox_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkbox_2"
+                    android:buttonTint="#ffff00"
+                    android:text="answer 3"
+                    android:textColor="@android:color/white" />
 
-                    <RadioButton
-                        android:id="@+id/checkbox_2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/checkbox_1"
-                        android:buttonTint="#ffff00"
-                        android:text="answer 2"
-                        android:textColor="@android:color/white" />
-
-                    <RadioButton
-                        android:id="@+id/checkbox_3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/checkbox_2"
-                        android:buttonTint="#ffff00"
-                        android:text="answer 3"
-                        android:textColor="@android:color/white" />
-
-                    <RadioButton
-                        android:id="@+id/checkbox_4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/checkbox_3"
-                        android:buttonTint="#ffff00"
-                        android:text="answer 4"
-                        android:textColor="@android:color/white" />
-                </RadioGroup>
-            </LinearLayout>
+                <RadioButton
+                    android:id="@+id/checkbox_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkbox_3"
+                    android:buttonTint="#ffff00"
+                    android:text="answer 4"
+                    android:textColor="@android:color/white" />
+            </RadioGroup>
 
             <TextView
                 android:id="@+id/submit_answer"
