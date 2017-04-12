@@ -33,11 +33,10 @@ public class MainMenuActivity extends AppCompatActivity {
 */
     }
 
-    void beginTest(View view) {
+    void letsGo(View view) {
         MediaPlayer mediaPlayer = MediaPlayer.create(MainMenuActivity.this, R.raw.light_saber);
         mediaPlayer.start();
 
-        //Intent intent = new Intent(this, EditTextActivity.class);
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
@@ -54,34 +53,5 @@ public class MainMenuActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        /*
-        super.onSaveInstanceState(outState);
-        outState.putInt("goalsTeamA", goalsTeamA);
-        outState.putInt("goalsTeamB", goalsTeamB);
-        outState.putInt("yellowCardsTeamA", yellowCardsTeamA);
-        outState.putInt("yellowCardsTeamB", yellowCardsTeamB);
-        outState.putInt("redCardsTeamA", redCardsTeamA);
-        outState.putInt("redCardsTeamB", redCardsTeamB);
-        */
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        /*
-        super.onRestoreInstanceState(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
-        goalsTeamA = savedInstanceState.getInt("goalsTeamA");
-        goalsTeamB = savedInstanceState.getInt("goalsTeamB");
-        yellowCardsTeamA = savedInstanceState.getInt("yellowCardsTeamA");
-        yellowCardsTeamB = savedInstanceState.getInt("yellowCardsTeamB");
-        redCardsTeamA = savedInstanceState.getInt("redCardsTeamA");
-        redCardsTeamB = savedInstanceState.getInt("redCardsTeamB");
-
-        displayAllScores();
-        */
     }
 }

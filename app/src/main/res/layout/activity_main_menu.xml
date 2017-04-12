@@ -61,8 +61,8 @@
 
         <TextView
             style="@style/CommonButton"
-            android:onClick="beginTest"
-            android:text="@string/begin_test" />
+            android:onClick="letsGo"
+            android:text="@string/lets_go" />
 
         <TextView
             style="@style/CommonButton"

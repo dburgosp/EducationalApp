@@ -14,7 +14,6 @@ import android.widget.VideoView;
 public class MainActivity extends AppCompatActivity {
     VideoView videoView;
     Uri uri;
-    MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-
         // Play intro video.
         videoView = (VideoView) findViewById(R.id.video_view);
         uri = Uri.parse("android.resource://" + this.getPackageName() + "/" + R.raw.intro);
-        //videoView.setKeepScreenOn(true);
         videoView.setVideoURI(uri);
         videoView.start();
 

@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context="com.example.android.educationalapp.CheckBoxActivity">
+    tools:context="com.example.android.educationalapp.EditTextActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/_01_jar_jar_binks" />
+        android:src="@drawable/_03_chewbacca" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,7 +32,6 @@
                 android:id="@+id/test_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/min_margin_padding_size"
                 android:layout_marginLeft="@dimen/max_margin_padding_size"
                 android:layout_marginRight="@dimen/max_margin_padding_size"
@@ -47,10 +46,8 @@
                 android:id="@+id/main_menu_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/test_title"
-                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/max_margin_padding_size"
-                android:text="Question #1"
+                android:text="Question #3"
                 android:textAllCaps="true"
                 android:textColor="#ffff00"
                 android:textStyle="bold" />
@@ -59,7 +56,6 @@
                 android:id="@+id/check_box_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/main_menu_title"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/medium_margin_padding_size"
                 android:gravity="center_horizontal"
@@ -67,50 +63,21 @@
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
-            <CheckBox
-                android:id="@+id/radio_button_1"
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/check_box_description"
-                android:buttonTint="#ffff00"
-                android:text="answer 1"
-                android:textColor="@android:color/white" />
-
-            <CheckBox
-                android:id="@+id/radio_button_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/radio_button_1"
-                android:buttonTint="#ffff00"
-                android:text="answer 2"
-                android:textColor="@android:color/white" />
-
-            <CheckBox
-                android:id="@+id/radio_button_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/radio_button_2"
-                android:buttonTint="#ffff00"
-                android:text="answer 3"
-                android:textColor="@android:color/white" />
-
-            <CheckBox
-                android:id="@+id/radio_button_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/radio_button_3"
-                android:buttonTint="#ffff00"
-                android:text="answer 4"
-                android:textColor="@android:color/white" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="@string/edit_text_quiz_hint"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/main_menu_title"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/medium_margin_padding_size"
+                android:layout_margin="@dimen/medium_margin_padding_size"
                 android:gravity="center_horizontal"
-                android:text="@string/check_box_description"
+                android:text="@string/edit_text_advice"
                 android:textColor="@android:color/white" />
 
             <TextView

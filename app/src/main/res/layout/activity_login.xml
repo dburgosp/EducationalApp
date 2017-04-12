@@ -10,7 +10,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="Diploma"
         android:src="@drawable/main_menu_bg" />
 
     <ImageView
@@ -31,13 +30,25 @@
         android:src="@drawable/logo" />
 
     <TextView
+        android:id="@+id/main_menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/star_wars_logo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/main_menu_title"
+        android:textAllCaps="true"
+        android:textColor="#ffff00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/type_your_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/star_wars_logo"
+        android:layout_below="@id/main_menu_title"
         android:layout_marginLeft="@dimen/max_margin_padding_size"
         android:layout_marginRight="@dimen/max_margin_padding_size"
-        android:layout_marginTop="@dimen/medium_margin_padding_size"
+        android:layout_marginTop="@dimen/max_margin_padding_size"
         android:gravity="center_horizontal"
         android:text="@string/type_your_name"
         android:textColor="@android:color/white" />
@@ -59,7 +70,7 @@
 
     <TextView
         style="@style/CommonButton"
-        android:layout_below="@id/edit_text"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="beginTest"
         android:text="@string/begin_test" />

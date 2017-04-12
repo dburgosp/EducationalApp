@@ -15,6 +15,8 @@ public class EditTextActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_edit_text_quiz);
+        setContentView(R.layout.activity_edit_text);
     }
+
+
 }

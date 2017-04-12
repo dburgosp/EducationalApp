@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RadioButtonActivity.class);
             intent.putExtra("player_name", name);
             intent.putExtra("question_number", 1);
+            intent.putExtra("right_answers", 0);
             startActivity(intent);
         }
     }

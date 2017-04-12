@@ -7,6 +7,7 @@
     tools:context="com.example.android.educationalapp.RadioButtonActivity">
 
     <ImageView
+        android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -30,13 +31,11 @@
 
             <TextView
                 android:id="@+id/test_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/min_margin_padding_size"
-                android:layout_marginLeft="@dimen/max_margin_padding_size"
-                android:layout_marginRight="@dimen/max_margin_padding_size"
                 android:layout_marginTop="@dimen/min_margin_padding_size"
+                android:gravity="center"
                 android:text="@string/main_menu_title"
                 android:textAllCaps="true"
                 android:textColor="#ffff00"
@@ -44,17 +43,16 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/main_menu_title"
+                android:id="@+id/radio_button_question_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/test_title"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/medium_margin_padding_size"
+                android:layout_marginBottom="@dimen/max_margin_padding_size"
                 android:text="Question #2"
                 android:textAllCaps="true"
                 android:textColor="#ffff00"
                 android:textStyle="bold" />
-
 
             <TextView
                 android:id="@+id/check_box_description"
@@ -65,47 +63,36 @@
                 android:layout_marginBottom="@dimen/medium_margin_padding_size"
                 android:gravity="center_horizontal"
                 android:text="Question"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/checkbox_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/check_box_description"
-                    android:buttonTint="#ffff00"
-                    android:text="answer 1"
-                    android:textColor="@android:color/white" />
+                    android:id="@+id/radio_button_1"
+                    style="@style/RadioButtonStyle"
+                    android:onClick="checkRadioButton1"
+                    android:text="answer 1" />
 
                 <RadioButton
-                    android:id="@+id/checkbox_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/checkbox_1"
-                    android:buttonTint="#ffff00"
-                    android:text="answer 2"
-                    android:textColor="@android:color/white" />
+                    android:id="@+id/radio_button_2"
+                    style="@style/RadioButtonStyle"
+                    android:onClick="checkRadioButton2"
+                    android:text="answer 2" />
 
                 <RadioButton
-                    android:id="@+id/checkbox_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/checkbox_2"
-                    android:buttonTint="#ffff00"
-                    android:text="answer 3"
-                    android:textColor="@android:color/white" />
+                    android:id="@+id/radio_button_3"
+                    style="@style/RadioButtonStyle"
+                    android:onClick="checkRadioButton3"
+                    android:text="answer 3" />
 
                 <RadioButton
-                    android:id="@+id/checkbox_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/checkbox_3"
-                    android:buttonTint="#ffff00"
-                    android:text="answer 4"
-                    android:textColor="@android:color/white" />
+                    android:id="@+id/radio_button_4"
+                    style="@style/RadioButtonStyle"
+                    android:onClick="checkRadioButton4"
+                    android:text="answer 4" />
             </RadioGroup>
 
             <TextView
