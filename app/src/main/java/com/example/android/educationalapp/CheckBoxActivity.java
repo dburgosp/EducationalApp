@@ -81,7 +81,7 @@ public class CheckBoxActivity extends AppCompatActivity {
      */
     void getContext() {
         correctAnswers = new ArrayList<String>();
-        for (int i = 0; i < 4; i++) correctAnswers.add(i, "false");
+        for (int i = 0; i < 4; i++) correctAnswers.add(i, "FALSE");
 
         playerName = getIntent().getExtras().getString("player_name");
         questionNumber = getIntent().getExtras().getInt("question_number");
@@ -128,7 +128,6 @@ public class CheckBoxActivity extends AppCompatActivity {
             checkBoxQuestion = new CheckBoxQuestion(question, answers, rightAnswers);
             checkBoxQuestions.add(n, checkBoxQuestion);
         }
-        return;
     }
 
     /**

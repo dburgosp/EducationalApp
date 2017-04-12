@@ -19,15 +19,20 @@
     <string name="radio_button_mandatory">Debes elegir una opción</string>
     <string name="type_answer_error">La respuesta no puede estar vacía</string>
     <string name="try_again">Repetir test</string>
+    <string name="get_your_diploma">¡Obtén tu Diploma!</string>
     <string name="test_result_header"><xliff:g example="David" id="name">%s</xliff:g>, éste es el resultado de tu test:</string>
+    <string name="diploma_first_line">El Consejo Jedi certifica que</string>
+    <string name="jedi_master">Maestro Jedi</string>
+    <string name="diploma_second_line">ha completado con éxito sus estudios y ha superado todas las pruebas y requisitos impuestos por esta Academia, en testimonio de lo cual se le otorga el título de</string>
+    <string name="diploma_third_line">Concedido en una galaxia muy, muy lejana, el <xliff:g example="01/01/2017" id="date">%s</xliff:g></string>
 
     <!--- Comments for ResultsActivity -->
     <string name="test_result_comments_0">¡Por el amor de Dios! Has sacado menos nota que Jar Jar Binks... Es increíble, estás al nivel de un Ewok. Dime la verdad: tú en realidad eres fan de Star Trek, ¿no?</string>
-    <string name="test_result_comments_1">Enhorabuena -y lo digo con todo el sarcasmo del mundo, claro-. No has sido capaz de sacar más nota que Jar Jar Binks, la criatura más torpe de la Galaxia.</string>
+    <string name="test_result_comments_1">Enhorabuena -lo digo con todo el sarcasmo del mundo, claro-. No has sido capaz de sacar más nota que Jar Jar Binks, la criatura más torpe de la Galaxia.</string>
     <string name="test_result_comments_2">¡Muy mal! Tienes la misma calificación que Boba Fett, que se presentó al examen sin estudiar y le pillaron copiando. Al menos a ti te dejaremos repetir el test.</string>
-    <string name="test_result_comments_3">Qué puedo decir... No has podido superar el nivel de conocimientos de Chebwacca. Aunque al menos no te lo has tomado tan mal como él y no le has arrancado la cabeza al profesor.</string>
-    <string name="test_result_comments_4">Has sacado la misma calificación que R2-D2. Claro que él no tiene brazos para marcar las preguntas correctas... ¿Cuál es tu excusa?</string>
-    <string name="test_result_comments_5">Aprobado justito. Has acertado tantas respuestas como Padme Amidala, que no pudo estudiar porque acababa de empezar a salir con Anakin y andaba con la cabeza en las nubes.</string>
+    <string name="test_result_comments_3">Qué puedo decir... No has podido superar el nivel de conocimientos de Chewbacca. Al menos no te lo has tomado tan mal como él y no le has arrancado la cabeza al profesor.</string>
+    <string name="test_result_comments_4">Has obtenido la misma calificación que R2-D2: un 4. Claro que él no tiene brazos para marcar las preguntas correctas... ¿Cuál es tu excusa?</string>
+    <string name="test_result_comments_5">Aprobado justito. Has acertado tantas respuestas como Padme Amidala, que empezaba a salir con Anakin por aquella época y andaba con la cabeza en las nubes.</string>
     <string name="test_result_comments_6">Bueno, no está mal. La Princesa Leia sacó la misma nota que tú, aunque ella estaba más pendiente de cuestiones del Senado Galáctico. Puedes mejorar.</string>
     <string name="test_result_comments_7">Eh, buen nivel. Obi Wan también acertó 7 preguntas, pero eso fue cuando era joven. Si hubiera hecho el test durante la trilogía clásica habría sacado un 10, seguro.</string>
     <string name="test_result_comments_8">¡Bravo! ¡Estás al mismo nivel que Luke Skywalker! Se nota que La Fuerza es poderosa en ti. Sigue así y terminarás por convertirte en todo un Maestro Jedi.</string>

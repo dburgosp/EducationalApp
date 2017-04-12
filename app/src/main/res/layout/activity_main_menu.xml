@@ -51,11 +51,12 @@
                 style="@style/CommonButton"
                 android:onClick="letsGo"
                 android:text="@string/lets_go" />
-
-            <TextView
-                style="@style/CommonButton"
-                android:onClick="hallOfFame"
-                android:text="@string/hall_of_fame" />
+            <!---
+                        <TextView
+                            style="@style/CommonButton"
+                            android:onClick="hallOfFame"
+                            android:text="@string/hall_of_fame" />
+            -->
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

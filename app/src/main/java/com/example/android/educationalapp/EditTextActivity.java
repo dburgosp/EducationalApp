@@ -137,11 +137,13 @@ public class EditTextActivity extends AppCompatActivity {
             Intent intent;
             if (questionNumber == 10)
                 intent = new Intent(this, ResultsActivity.class);
-            else
+            else {
+                questionNumber = questionNumber + 1;
                 intent = new Intent(this, RadioButtonActivity.class);
+            }
             intent.putExtra("right_answers", rightAnswers);
             intent.putExtra("player_name", playerName);
-            intent.putExtra("question_number", questionNumber + 1);
+            intent.putExtra("question_number", questionNumber);
             startActivity(intent);
         }
     }
