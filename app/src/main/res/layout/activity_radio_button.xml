@@ -15,7 +15,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/medium_margin_padding_size"
         android:alpha="0.75"
         android:background="@drawable/bg_layer">
@@ -93,12 +93,9 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/submit_answer"
                 style="@style/CommonButton"
                 android:onClick="submitAnswer"
                 android:text="@string/submit_answer" />
-
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

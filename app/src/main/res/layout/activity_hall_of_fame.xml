@@ -10,15 +10,15 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="Death Star"
-        android:src="@drawable/main_menu_bg" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/star_wars_celebration" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/medium_margin_padding_size"
-        android:alpha="0.5"
+        android:alpha="0.75"
         android:background="@drawable/bg_layer" />
 
     <LinearLayout
@@ -27,16 +27,9 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/star_wars_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/medium_margin_padding_size"
-            android:layout_marginTop="@dimen/max_margin_padding_size"
-            android:src="@drawable/logo" />
+        <ImageView style="@style/HeaderImage" />
 
         <TextView
-            android:id="@+id/text_view_hall_of_fame_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hall_of_fame"
@@ -46,13 +39,8 @@
             android:textStyle="bold" />
 
         <ScrollView
-            android:id="@+id/scroll_view_hall_of_fame"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_marginLeft="@dimen/max_margin_padding_size"
-            android:layout_marginRight="@dimen/max_margin_padding_size"
-            android:layout_marginTop="@dimen/medium_margin_padding_size"
-            android:background="@drawable/bg_layer"
+            android:layout_height="match_parent"
             android:fillViewport="true"
             android:minHeight="@dimen/max_margin_padding_size"
             android:padding="@dimen/medium_margin_padding_size">
@@ -60,161 +48,172 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="1" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="2" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="3" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="4" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="5" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="6" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="7" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="8" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="9" />
-
-                    <TextView
-                        style="@style/HallOfFameOrder"
-                        android:text="10" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/medium_margin_padding_size"
-                    android:layout_weight="4"
-                    android:orientation="vertical">
+                    android:layout_marginRight="@dimen/medium_margin_padding_size"
+                    android:layout_marginTop="@dimen/medium_margin_padding_size"
+                    android:alpha="0.75"
+                    android:background="@drawable/bg_layer"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/medium_margin_padding_size">
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Yoda" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Darth Vader" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="1" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Luke Skywalker" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="2" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Obi Wan Kenobi" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="3" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Leia Organa" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="4" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Padme Amidala" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="5" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="R2-D2" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="6" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Chewbacca" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="7" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Boba Fett" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="8" />
 
-                    <TextView
-                        style="@style/HallOfFameName"
-                        android:text="Jar Jar Binks" />
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="9" />
+
+                        <TextView
+                            style="@style/HallOfFameOrder"
+                            android:text="10" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/medium_margin_padding_size"
+                        android:layout_weight="4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Yoda" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Darth Vader" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Luke Skywalker" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Obi Wan Kenobi" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Leia Organa" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Padme Amidala" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="R2-D2" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Chewbacca" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Boba Fett" />
+
+                        <TextView
+                            style="@style/HallOfFameName"
+                            android:text="Jar Jar Binks" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/medium_margin_padding_size"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="10/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="9/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="8/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="7/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="6/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="5/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="4/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="3/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="2/10" />
+
+                        <TextView
+                            style="@style/HallOfFameScore"
+                            android:text="1/10" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/medium_margin_padding_size"
-                    android:layout_weight="2"
-                    android:gravity="right"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="10/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="9/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="8/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="7/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="6/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="5/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="4/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="3/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="2/10" />
-
-                    <TextView
-                        style="@style/HallOfFameScore"
-                        android:text="1/10" />
-                </LinearLayout>
+                <TextView
+                    style="@style/CommonButton"
+                    android:onClick="goBack"
+                    android:text="@string/go_back" />
             </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
-
-    <TextView
-        style="@style/CommonButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="goBack"
-        android:text="@string/go_back" />
 
 </RelativeLayout>

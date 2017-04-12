@@ -1,6 +1,7 @@
 package com.example.android.educationalapp;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,6 +20,7 @@ public class RadioButtonActivity extends AppCompatActivity {
     ArrayList<RadioButtonQuestion> radioButtonQuestions;
     RadioButtonQuestion radioButtonQuestion;
     int checked = 0, questionNumber, rightAnswers;
+    String playerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,15 @@ public class RadioButtonActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_radio_button);
 
+        // Get context for this activity.
+        getContext();
+
         // Set title.
-        questionNumber = getIntent().getExtras().getInt("question_number");
         TextView textViewQuestionNumber = (TextView) findViewById(R.id.radio_button_question_number);
         textViewQuestionNumber.setText(getResources().getString(R.string.question_title, questionNumber));
 
         // Get random question.
-        initRadioButtonQuestions();
+        initQuestions();
         int randomQuestion = (int) (Math.random() * NUMBER_OF_QUESTIONS) + 1;
         radioButtonQuestion = radioButtonQuestions.get(randomQuestion - 1);
 
@@ -59,7 +63,6 @@ public class RadioButtonActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable._09_darth_vader);
                 break;
         }
-        imageView.refreshDrawableState();
 
         // Show question and answers.
         TextView textViewQuestion = (TextView) findViewById(R.id.check_box_description);
@@ -74,7 +77,63 @@ public class RadioButtonActivity extends AppCompatActivity {
         radioButton4.setText(radioButtonQuestion.getAnswers().get(3));
     }
 
+    /**
+     * Get context variables for RadioButtonActivity.
+     */
+    void getContext() {
+        playerName = getIntent().getExtras().getString("player_name");
+        questionNumber = getIntent().getExtras().getInt("question_number");
+        rightAnswers = getIntent().getExtras().getInt("right_answers");
+
+        Log.i("RadioButtonActivity", "getContext - Player name: " + playerName);
+        Log.i("RadioButtonActivity", "getContext - Current question: " + questionNumber + "/10");
+        Log.i("RadioButtonActivity", "getContext - Right answers so far: " + rightAnswers);
+    }
+
+    /**
+     * Builds an ArrayList of RadioButtonQuestion with all the questions and answers for
+     * RadioButtonActivity found at strings.xml.
+     */
+    void initQuestions() {
+        RadioButtonQuestion radioButtonQuestion;
+        ArrayList<String> answers;
+        String question, answer;
+        int idAnswer, idQuestion, idRightAnswer, rightAnswer;
+
+        radioButtonQuestions = new ArrayList<RadioButtonQuestion>();
+
+        for (int n = 0; n < NUMBER_OF_QUESTIONS; n++) {
+            idQuestion = getResources().getIdentifier("radio_button_question_" + (n + 1), "string", getPackageName());
+            question = getResources().getString(idQuestion).toUpperCase();
+            Log.i("RadioButtonActivity", "initQuestions - Question " + (n + 1) + ": " + question);
+
+            answers = new ArrayList<String>();
+            for (int i = 0; i < 4; i++) {
+                idAnswer = getResources().getIdentifier("radio_button_question_" + (n + 1) + "_answer_" + (i + 1), "string", getPackageName());
+                answer = getResources().getString(idAnswer).toUpperCase();
+                Log.i("RadioButtonActivity", "initQuestions - Answer " + (n + 1) + "." + (i + 1) + ": " + answer);
+                answers.add(i, answer);
+            }
+
+            idRightAnswer = getResources().getIdentifier("radio_button_right_answer_" + (n + 1), "string", getPackageName());
+            rightAnswer = Integer.parseInt(getResources().getString(idRightAnswer));
+            Log.i("RadioButtonActivity", "initQuestions - Right answer " + (n + 1) + ": " + rightAnswer);
+
+            radioButtonQuestion = new RadioButtonQuestion(question, answers, rightAnswer);
+            radioButtonQuestions.add(n, radioButtonQuestion);
+        }
+    }
+
+    /**
+     * Actions to be done when a RadioButton is checked on activity_radio_button.xml.
+     *
+     * @param view
+     */
     public void checkRadioButton(View view) {
+        // Play a sound.
+        MediaPlayer mediaPlayer = MediaPlayer.create(RadioButtonActivity.this, R.raw.impblst);
+        mediaPlayer.start();
+
         int viewId = view.getId();
         switch (viewId) {
             case R.id.radio_button_1:
@@ -95,6 +154,11 @@ public class RadioButtonActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Actions to be done when submit button is clicked on activity_radio_button.xml.
+     *
+     * @param view
+     */
     void submitAnswer(View view) {
         Intent intent;
 
@@ -103,6 +167,10 @@ public class RadioButtonActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, R.string.radio_button_mandatory, Toast.LENGTH_SHORT);
             toast.show();
         } else {
+            // Play a sound.
+            MediaPlayer mediaPlayer = MediaPlayer.create(RadioButtonActivity.this, R.raw.light_saber);
+            mediaPlayer.start();
+
             // Select next activity.
             switch (questionNumber) {
                 case 1:
@@ -116,7 +184,6 @@ public class RadioButtonActivity extends AppCompatActivity {
                     break;
             }
 
-            rightAnswers = getIntent().getExtras().getInt("right_answers");
             if (checked == radioButtonQuestion.getCorrectAnswer()) {
                 // Right answer.
                 rightAnswers = rightAnswers + 1;
@@ -124,43 +191,9 @@ public class RadioButtonActivity extends AppCompatActivity {
 
             // Start next activity.
             intent.putExtra("right_answers", rightAnswers);
-            intent.putExtra("player_name", getIntent().getExtras().getString("player_name"));
+            intent.putExtra("player_name", playerName);
             intent.putExtra("question_number", questionNumber + 1);
             startActivity(intent);
-        }
-    }
-
-    /**
-     * Builds an ArrayList of RadioButtonQuestion with all the questions and answers for
-     * RadioButtonActivity found at strings.xml.
-     */
-    void initRadioButtonQuestions() {
-        RadioButtonQuestion radioButtonQuestion;
-        ArrayList<String> answers;
-        String question, answer;
-        int idAnswer, idQuestion, idRightAnswer, rightAnswer;
-
-        radioButtonQuestions = new ArrayList<RadioButtonQuestion>();
-
-        for (int n = 0; n < NUMBER_OF_QUESTIONS; n++) {
-            idQuestion = getResources().getIdentifier("radio_button_question_" + (n + 1), "string", getPackageName());
-            question = getResources().getString(idQuestion).toUpperCase();
-            Log.i("RadioButtonActivity", "Question " + (n + 1) + ": " + question);
-
-            answers = new ArrayList<String>();
-            for (int i = 0; i < 4; i++) {
-                idAnswer = getResources().getIdentifier("radio_button_question_" + (n + 1) + "_answer_" + (i + 1), "string", getPackageName());
-                answer = getResources().getString(idAnswer).toUpperCase();
-                Log.i("RadioButtonActivity", "Answer " + (n + 1) + "." + (i + 1) + ": " + answer);
-                answers.add(i, answer);
-            }
-
-            idRightAnswer = getResources().getIdentifier("radio_button_right_answer_" + (n + 1), "string", getPackageName());
-            rightAnswer = Integer.parseInt(getResources().getString(idRightAnswer));
-            Log.i("RadioButtonActivity", "Right answer " + (n + 1) + ": " + rightAnswer);
-
-            radioButtonQuestion = new RadioButtonQuestion(question, answers, rightAnswer);
-            radioButtonQuestions.add(n, radioButtonQuestion);
         }
     }
 }

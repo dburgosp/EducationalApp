@@ -24,11 +24,16 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
+    /**
+     * Actions to be done when 'begin text' button is clicked.
+     *
+     * @param view
+     */
     void beginTest(View view) {
-        editText = (EditText) findViewById(R.id.edit_text);
-        String name = editText.getText().toString();
-        if (name.isEmpty()) {
-            // The name cannot be empty.
+        editText = (EditText) findViewById(R.id.login_edit_text);
+        String playerName = editText.getText().toString();
+        if (playerName.isEmpty()) {
+            // Player's name cannot be empty.
             Toast toast = Toast.makeText(this, R.string.type_your_name_error, Toast.LENGTH_SHORT);
             toast.show();
         } else {
@@ -38,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
 
             // Save player's name and go to the first question.
             Intent intent = new Intent(this, RadioButtonActivity.class);
-            intent.putExtra("player_name", name);
+            intent.putExtra("player_name", playerName);
             intent.putExtra("question_number", 1);
             intent.putExtra("right_answers", 0);
             startActivity(intent);

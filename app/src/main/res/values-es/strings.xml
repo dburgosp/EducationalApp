@@ -3,7 +3,7 @@
     <string name="app_name">Aplicación Educacional</string>
     <string name="main_menu_title">Hazte Maestro Jedi</string>
     <string name="main_menu_description">Contesta correctamente 10 preguntas para recibir tu diploma de Maestro Jedi. Si fallas en algún momento tendrás que empezar de nuevo. Las preguntas son aleatorias, así que cada vez que reinicies el test probablemente te enfrentarás a un reto diferente. Normalmente tendrás que elegir una única respuesta correcta entre varias opciones, pero algunas respuestas son de selección múltiple o incluso de texto libre. ¡Que la Fuerza te acompañe!</string>
-    <string name="hall_of_fame">Mejores puntuaciones</string>
+    <string name="hall_of_fame">Los 10 mejores</string>
     <string name="go_back">Volver</string>
     <string name="begin_test">Comenzar</string>
     <string name="intro_toast">Toca la pantalla para saltar la intro</string>
@@ -11,12 +11,28 @@
     <string name="type_your_name_hint">Nombre y apellido</string>
     <string name="type_your_name_error">El nombre no puede estar vacío</string>
     <string name="question_title">Pregunta nº <xliff:g example="2" id="number">%d</xliff:g></string>
-    <string name="check_box_description">Atención, <xliff:g example="David" id="name">%s</xliff:g>, esta pregunta puede tener múltiples respuestas.</string>
+    <string name="check_box_advice">Atención, <xliff:g example="David" id="name">%s</xliff:g>, esta pregunta puede tener múltiples respuestas.</string>
     <string name="submit_answer">Enviar respuesta</string>
-    <string name="edit_text_advice">Vigila tu ortografía, <xliff:g example="David" id="name">%s</xliff:g>. Puede que conozcas la respuesta correcta, pero si la escribes mal se considerará una respuesta incorrecta.</string>
+    <string name="edit_text_advice">Vigila tu ortografía, <xliff:g example="David" id="name">%s</xliff:g>. Puede que conozcas la respuesta, pero si la escribes mal se considerará incorrecta.</string>
     <string name="edit_text_quiz_hint">Escribe aquí tu respuesta</string>
-    <string name="lets_go">¡Empezemos!</string>
+    <string name="lets_go">¡Empecemos!</string>
     <string name="radio_button_mandatory">Debes elegir una opción</string>
+    <string name="type_answer_error">La respuesta no puede estar vacía</string>
+    <string name="try_again">Repetir test</string>
+    <string name="test_result_header"><xliff:g example="David" id="name">%s</xliff:g>, éste es el resultado de tu test:</string>
+
+    <!--- Comments for ResultsActivity -->
+    <string name="test_result_comments_0">¡Por el amor de Dios! Has sacado menos nota que Jar Jar Binks... Es increíble, estás al nivel de un Ewok. Dime la verdad: tú en realidad eres fan de Star Trek, ¿no?</string>
+    <string name="test_result_comments_1">Enhorabuena -y lo digo con todo el sarcasmo del mundo, claro-. No has sido capaz de sacar más nota que Jar Jar Binks, la criatura más torpe de la Galaxia.</string>
+    <string name="test_result_comments_2">¡Muy mal! Tienes la misma calificación que Boba Fett, que se presentó al examen sin estudiar y le pillaron copiando. Al menos a ti te dejaremos repetir el test.</string>
+    <string name="test_result_comments_3">Qué puedo decir... No has podido superar el nivel de conocimientos de Chebwacca. Aunque al menos no te lo has tomado tan mal como él y no le has arrancado la cabeza al profesor.</string>
+    <string name="test_result_comments_4">Has sacado la misma calificación que R2-D2. Claro que él no tiene brazos para marcar las preguntas correctas... ¿Cuál es tu excusa?</string>
+    <string name="test_result_comments_5">Aprobado justito. Has acertado tantas respuestas como Padme Amidala, que no pudo estudiar porque acababa de empezar a salir con Anakin y andaba con la cabeza en las nubes.</string>
+    <string name="test_result_comments_6">Bueno, no está mal. La Princesa Leia sacó la misma nota que tú, aunque ella estaba más pendiente de cuestiones del Senado Galáctico. Puedes mejorar.</string>
+    <string name="test_result_comments_7">Eh, buen nivel. Obi Wan también acertó 7 preguntas, pero eso fue cuando era joven. Si hubiera hecho el test durante la trilogía clásica habría sacado un 10, seguro.</string>
+    <string name="test_result_comments_8">¡Bravo! ¡Estás al mismo nivel que Luke Skywalker! Se nota que La Fuerza es poderosa en ti. Sigue así y terminarás por convertirte en todo un Maestro Jedi.</string>
+    <string name="test_result_comments_9">¡Impresionante! ¡Tienes el mismo nivel de conocimientos que el mismísimo Darth Vader! Bueno, en realidad él acertó todas las preguntas, pero le quitaron un punto por pasarse al Lado Oscuro...</string>
+    <string name="test_result_comments_10">¡Enhorabuena! ¡Eres un verdadero fan de Star Wars! ¡Has acertado todas las preguntas! Has alcanzado el nivel de todo un Maestro Jedi, como Yoda. Puedes recoger tu Diploma, te lo has ganado.</string>
 
     <!--- Questions and answers for CheckBoxActivity -->
     <string name="check_box_question_1">¿En cuáles de estos años se estrenó alguna película de Star Wars?</string>
@@ -105,7 +121,7 @@
     <string name="edit_text_question_1">¿El \"fétido olor\" de qué personaje reconoció Leia al ser enviada a la Estrella de la Muerte?</string>
     <string name="edit_text_answer_1">Grand Moff Tarkin</string>
     <string name="edit_text_min_answer_1">Tarkin</string>
-    <string name="edit_text_question_2">¿Con cuántos años de proclamó Padme Amidala como reina de Naboo?</string>
+    <string name="edit_text_question_2">¿Con cuántos años Padme Amidala se proclamó reina de Naboo?</string>
     <string name="edit_text_answer_2">14</string>
     <string name="edit_text_min_answer_2">Catorce</string>
     <string name="edit_text_question_3">¿Cuál es el nombre de la raza alienígena que creó el Ejército Clon mediante ingeniería genética?</string>
@@ -266,7 +282,7 @@
     <string name="radio_button_question_24_answer_2">Malmö, Suecia</string>
     <string name="radio_button_question_24_answer_3">Finse, Noruega</string>
     <string name="radio_button_question_24_answer_4">Les Trois Vallées, Francia</string>
-    <string name="radio_button_question_25">¿Por qué razón Jabba el Hutt contrató cazarrecompensas para dar caza a Han Solo?</string>
+    <string name="radio_button_question_25">¿Por qué contrató Jabba el Hutt a un cazarrecompensas para buscar a Han Solo?</string>
     <string name="radio_button_question_25_answer_1">Porque el Imperio le prometió a Jabba una recompensa por Han.</string>
     <string name="radio_button_question_25_answer_2">Porque Chewbacca había sido esclavo de Jabba.</string>
     <string name="radio_button_question_25_answer_3">Porque Han asesinó a Greedo.</string>
