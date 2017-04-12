@@ -7,6 +7,7 @@
     tools:context="com.example.android.educationalapp.EditTextActivity">
 
     <ImageView
+        android:id="@+id/edit_text_background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -33,8 +34,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/min_margin_padding_size"
-                android:layout_marginLeft="@dimen/max_margin_padding_size"
-                android:layout_marginRight="@dimen/max_margin_padding_size"
                 android:layout_marginTop="@dimen/min_margin_padding_size"
                 android:text="@string/main_menu_title"
                 android:textAllCaps="true"
@@ -43,7 +42,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/main_menu_title"
+                android:id="@+id/edit_text_question_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/max_margin_padding_size"
@@ -53,7 +52,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/check_box_description"
+                android:id="@+id/edit_text_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -68,10 +67,12 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:hint="@string/edit_text_quiz_hint"
+                android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/edit_text_advice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

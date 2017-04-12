@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     EditText editText;
-    String FILENAME = "PadawanData";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,7 @@
     tools:context="com.example.android.educationalapp.RadioButtonActivity">
 
     <ImageView
-        android:id="@+id/background_image"
+        android:id="@+id/radio_button_background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -46,8 +46,6 @@
                 android:id="@+id/radio_button_question_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/test_title"
-                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/max_margin_padding_size"
                 android:text="Question #2"
                 android:textAllCaps="true"
@@ -58,7 +56,6 @@
                 android:id="@+id/check_box_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/main_menu_title"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/medium_margin_padding_size"
                 android:gravity="center_horizontal"
@@ -73,25 +70,25 @@
                 <RadioButton
                     android:id="@+id/radio_button_1"
                     style="@style/RadioButtonStyle"
-                    android:onClick="checkRadioButton1"
+                    android:onClick="checkRadioButton"
                     android:text="answer 1" />
 
                 <RadioButton
                     android:id="@+id/radio_button_2"
                     style="@style/RadioButtonStyle"
-                    android:onClick="checkRadioButton2"
+                    android:onClick="checkRadioButton"
                     android:text="answer 2" />
 
                 <RadioButton
                     android:id="@+id/radio_button_3"
                     style="@style/RadioButtonStyle"
-                    android:onClick="checkRadioButton3"
+                    android:onClick="checkRadioButton"
                     android:text="answer 3" />
 
                 <RadioButton
                     android:id="@+id/radio_button_4"
                     style="@style/RadioButtonStyle"
-                    android:onClick="checkRadioButton4"
+                    android:onClick="checkRadioButton"
                     android:text="answer 4" />
             </RadioGroup>
 
