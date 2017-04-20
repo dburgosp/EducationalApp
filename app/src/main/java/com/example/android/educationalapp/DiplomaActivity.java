@@ -5,7 +5,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -30,7 +29,7 @@ public class DiplomaActivity extends AppCompatActivity {
         getContext();
 
         // Play the music.
-        mediaPlayer = MediaPlayer.create(DiplomaActivity.this, R.raw.the_throne_room);
+        mediaPlayer = MediaPlayer.create(DiplomaActivity.this, R.raw._the_throne_room);
         mediaPlayer.start();
 
         // Name and current date.
@@ -40,14 +39,6 @@ public class DiplomaActivity extends AppCompatActivity {
 
         Calendar date = Calendar.getInstance();
         textViewDate.setText(getResources().getString(R.string.diploma_third_line, date.getTime().toString()));
-
-        // Define custom behaviour when music ends.
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                endDiploma();
-            }
-        });
     }
 
     /**
@@ -64,18 +55,5 @@ public class DiplomaActivity extends AppCompatActivity {
         mediaPlayer.pause();
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
-    }
-
-    void endDiploma() {
-        Intent intent = new Intent(this, HallOfFameActivity.class);
-        startActivity(intent);
-    }
-
-    void hallOfFame(View view) {
-        // Play a sound.
-        MediaPlayer mediaPlayer = MediaPlayer.create(DiplomaActivity.this, R.raw.light_saber);
-        mediaPlayer.start();
-
-        endDiploma();
     }
 }

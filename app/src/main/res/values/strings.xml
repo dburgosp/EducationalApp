@@ -8,7 +8,7 @@
 
     <string name="intro_toast">Tap the screen to skip intro</string>
     <string name="main_menu_title">Become a Jedi Master</string>
-    <string name="main_menu_description">Answer correctly 10 questions to receive your Jedi Master Diploma. If you fail at some point you will have to start over. The questions are random, so every time you restart the test you will probably face a different challenge. Most of the time you will have to choose a single correct answer from several options, but some answers are multiple selection or even free text. May the Force be with you!</string>
+    <string name="main_menu_description">Answer correctly 10 questions to receive your Jedi Master Diploma.\n\nQuestions are random, so every time you restart the test you will face a different challenge. Most of the time there will be a single correct answer from several options, but some answers are multiple selection or even free text.\n\nMay the Force be with you!</string>
     <string name="begin_test">Begin Test</string>
     <string name="hall_of_fame">Hall of Fame</string>
     <string name="go_back">Back</string>
@@ -30,8 +30,13 @@
     <string name="diploma_third_line">Issued in a galaxy far, far away, on <xliff:g example="01/01/2017" id="date">%s</xliff:g></string>
     <string name="diploma_first_line">The Jedi High Council certifies that</string>
     <string name="diploma_second_line">has succesfully completed the required studies and fulfilled the requeriments of this Academy and, in testimony whereof, has been recognized to the title of</string>
+    <string name="result_activity_background">Star Wars Celebration</string>
+    <string name="background_layer">Background Layer</string>
+    <string name="header_image">Android Basics Nanodegree</string>
+    <string name="default_test_result">1/10</string>
+    <string name="default_text">Lorem ipsum dolor sit amet</string>
 
-    <!--- Comments for ResultsActivity -->
+    <!--- Comments for FinalScoreActivity -->
     <string name="test_result_comments_0">For goodness\' sake! You got a lower score than Jar Jar Binks ... It\'s amazing, not even an Ewok would make it worse. Tell me the truth: you really are a Star Trek fan, right?</string>
     <string name="test_result_comments_1">Congratulations! ... I say it wryly, of course. You could not get a higher score than Jar Jar Binks, the most awkward creature in the Galaxy! You must improve a lot, young Padawan.</string>
     <string name="test_result_comments_2">Very bad! You\'ve got the same score than Boba Fett, who came to the exam without studying and got caught copying. At least you will be allowed to repeat the test.</string>
@@ -126,6 +131,15 @@
     <string name="check_box_question_9_answer_2_is_correct">true</string>
     <string name="check_box_question_9_answer_3_is_correct">false</string>
     <string name="check_box_question_9_answer_4_is_correct">false</string>
+    <string name="check_box_question_10">Who were Luke Skywalker aunt and uncle?</string>
+    <string name="check_box_question_10_answer_1">BERU</string>
+    <string name="check_box_question_10_answer_2">BEN</string>
+    <string name="check_box_question_10_answer_3">SHMI</string>
+    <string name="check_box_question_10_answer_4">OWEN</string>
+    <string name="check_box_question_10_answer_1_is_correct">true</string>
+    <string name="check_box_question_10_answer_2_is_correct">false</string>
+    <string name="check_box_question_10_answer_3_is_correct">false</string>
+    <string name="check_box_question_10_answer_4_is_correct">true</string>
 
     <!--- Questions and answers for EditTextActivity -->
     <string name="edit_text_question_1">Whose \"foul stench\" did Leia say she recognized on the Death Star?</string>
@@ -450,9 +464,9 @@
     <string name="radio_button_question_46_answer_4">C-3PO</string>
     <string name="radio_button_question_47">What was the original name of \'Return of the Jedi\'?</string>
     <string name="radio_button_right_answer_47">4</string>
-    <string name="radio_button_question_47_answer_1">THE END OF THE EMPIRE\'</string>
-    <string name="radio_button_question_47_answer_2">THE NEW REPUBLIC\'</string>
-    <string name="radio_button_question_47_answer_3">RETURN OF THE JEDI\'</string>
-    <string name="radio_button_question_47_answer_4">REVENGE OF THE JEDI\'</string>
+    <string name="radio_button_question_47_answer_1">\'THE END OF THE EMPIRE\'</string>
+    <string name="radio_button_question_47_answer_2">\'THE NEW REPUBLIC\'</string>
+    <string name="radio_button_question_47_answer_3">\'RETURN OF THE JEDI\'</string>
+    <string name="radio_button_question_47_answer_4">\'REVENGE OF THE JEDI\'</string>
 
 </resources>

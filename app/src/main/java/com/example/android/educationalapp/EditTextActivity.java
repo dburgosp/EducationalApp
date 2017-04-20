@@ -1,6 +1,7 @@
 package com.example.android.educationalapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,11 +18,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class EditTextActivity extends AppCompatActivity {
-    final int NUMBER_OF_QUESTIONS = 14;
     int questionNumber, rightAnswers;
-    ArrayList<EditTextQuestion> editTextQuestions;
+    String playerName, rightAnswer, question, answer, minAnswer;
     EditTextQuestion editTextQuestion;
-    String playerName, rightAnswer, minAnswer;
+    ArrayList<Integer> editTextQuestionsOrder, checkBoxQuestionsOrder, radioButtonQuestionsOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,24 +33,33 @@ public class EditTextActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_edit_text);
 
+        // Set fonts.
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/starwars.ttf");
+        TextView textView1 = (TextView) findViewById(R.id.activity_edit_text_title);
+        Button button1 = (Button) findViewById(R.id.activity_edit_text_submit_button);
+        TextView textView3 = (TextView) findViewById(R.id.activity_edit_text_question_number);
+        textView1.setTypeface(custom_font);
+        button1.setTypeface(custom_font);
+        textView3.setTypeface(custom_font);
+        button1.setAllCaps(true);
+
         // Get context for this activity.
         getContext();
 
         // Set title.
-        TextView textViewQuestionNumber = (TextView) findViewById(R.id.edit_text_question_number);
-        textViewQuestionNumber.setText(getResources().getString(R.string.question_title, questionNumber));
+        textView3.setText(getResources().getString(R.string.question_title, questionNumber));
 
         // Set advice.
-        TextView textViewAdvice = (TextView) findViewById(R.id.edit_text_advice);
+        TextView textViewAdvice = (TextView) findViewById(R.id.activity_edit_text_advice);
         textViewAdvice.setText(getResources().getString(R.string.edit_text_advice, playerName));
 
-        // Get random question.
-        initQuestions();
-        int randomQuestion = (int) (Math.random() * NUMBER_OF_QUESTIONS) + 1;
-        editTextQuestion = editTextQuestions.get(randomQuestion - 1);
+        // Get current question.
+        int index = editTextQuestionsOrder.get(questionNumber - 1);
+        readQuestion(index - 1);
+        editTextQuestion = new EditTextQuestion(question, answer, minAnswer);
 
         // Set background image.
-        ImageView imageView = (ImageView) findViewById(R.id.edit_text_background_image);
+        ImageView imageView = (ImageView) findViewById(R.id.activity_edit_text_background);
         switch (questionNumber) {
             case 2:
                 imageView.setImageResource(R.drawable._02_boba_fett);
@@ -63,7 +73,7 @@ public class EditTextActivity extends AppCompatActivity {
         }
 
         // Show question and get answers.
-        TextView textViewQuestion = (TextView) findViewById(R.id.edit_text_description);
+        TextView textViewQuestion = (TextView) findViewById(R.id.activity_edit_text_description);
         textViewQuestion.setText(editTextQuestion.getQuestion());
         rightAnswer = editTextQuestion.getAnswer();
         minAnswer = editTextQuestion.getminAnswer();
@@ -73,9 +83,16 @@ public class EditTextActivity extends AppCompatActivity {
      * Get context variables for EditTextActivity.
      */
     void getContext() {
+        editTextQuestionsOrder = new ArrayList<Integer>();
+        checkBoxQuestionsOrder = new ArrayList<Integer>();
+        radioButtonQuestionsOrder = new ArrayList<Integer>();
+
         playerName = getIntent().getExtras().getString("player_name");
         questionNumber = getIntent().getExtras().getInt("question_number");
         rightAnswers = getIntent().getExtras().getInt("right_answers");
+        editTextQuestionsOrder = getIntent().getExtras().getIntegerArrayList("edit_text_questions_order");
+        checkBoxQuestionsOrder = getIntent().getExtras().getIntegerArrayList("check_box_questions_order");
+        radioButtonQuestionsOrder = getIntent().getExtras().getIntegerArrayList("radio_button_questions_order");
 
         Log.i("EditTextActivity", "getContext - Player name: " + playerName);
         Log.i("EditTextActivity", "getContext - Current question: " + questionNumber + "/10");
@@ -83,32 +100,24 @@ public class EditTextActivity extends AppCompatActivity {
     }
 
     /**
-     * Builds an ArrayList of EditTextQuestion with all the questions and answers for
-     * EditTextActivity found at strings.xml.
+     * Reads question n from strings.xml.
+     *
+     * @param n number of the question.
      */
-    void initQuestions() {
-        EditTextQuestion editTextQuestion;
-        int idQuestion, idAnswer, idMinAnswer;
-        String question, answer, minAnswer;
+    void readQuestion(int n) {
+        int idAnswer, idQuestion, idMinAnswer;
 
-        editTextQuestions = new ArrayList<EditTextQuestion>();
+        idQuestion = getResources().getIdentifier("edit_text_question_" + (n + 1), "string", getPackageName());
+        question = getResources().getString(idQuestion).toUpperCase();
+        Log.i("EditTextActivity", "initQuestions - Question " + (n + 1) + ": " + question);
 
-        for (int n = 0; n < NUMBER_OF_QUESTIONS; n++) {
-            idQuestion = getResources().getIdentifier("edit_text_question_" + (n + 1), "string", getPackageName());
-            question = getResources().getString(idQuestion).toUpperCase();
-            Log.i("EditTextActivity", "initQuestions - Question " + (n + 1) + ": " + question);
+        idAnswer = getResources().getIdentifier("edit_text_answer_" + (n + 1), "string", getPackageName());
+        answer = getResources().getString(idAnswer).toUpperCase();
+        Log.i("EditTextActivity", "initQuestions - Answer " + (n + 1) + ": " + answer);
 
-            idAnswer = getResources().getIdentifier("edit_text_answer_" + (n + 1), "string", getPackageName());
-            answer = getResources().getString(idAnswer).toUpperCase();
-            Log.i("EditTextActivity", "initQuestions - Answer " + (n + 1) + ": " + answer);
-
-            idMinAnswer = getResources().getIdentifier("edit_text_min_answer_" + (n + 1), "string", getPackageName());
-            minAnswer = getResources().getString(idMinAnswer).toUpperCase();
-            Log.i("EditTextActivity", "initQuestions - Min. answer " + (n + 1) + ": " + minAnswer);
-
-            editTextQuestion = new EditTextQuestion(question, answer, minAnswer);
-            editTextQuestions.add(n, editTextQuestion);
-        }
+        idMinAnswer = getResources().getIdentifier("edit_text_min_answer_" + (n + 1), "string", getPackageName());
+        minAnswer = getResources().getString(idMinAnswer).toUpperCase();
+        Log.i("EditTextActivity", "initQuestions - Min. answer " + (n + 1) + ": " + minAnswer);
     }
 
     /**
@@ -116,8 +125,8 @@ public class EditTextActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void submitAnswer(View view) {
-        EditText editText = (EditText) findViewById(R.id.edit_text_answer);
+    public void submitEditTextAnswer(View view) {
+        EditText editText = (EditText) findViewById(R.id.activity_edit_text_answer);
         String answer = editText.getText().toString().toUpperCase();
         if (answer.isEmpty()) {
             // Answer cannot be empty.
@@ -125,7 +134,7 @@ public class EditTextActivity extends AppCompatActivity {
             toast.show();
         } else {
             // Play a sound.
-            MediaPlayer mediaPlayer = MediaPlayer.create(EditTextActivity.this, R.raw.light_saber);
+            MediaPlayer mediaPlayer = MediaPlayer.create(EditTextActivity.this, R.raw._light_saber);
             mediaPlayer.start();
 
             if ((answer.equals(minAnswer)) || (answer.equals(rightAnswer))) {
@@ -136,14 +145,17 @@ public class EditTextActivity extends AppCompatActivity {
             // Start next activity.
             Intent intent;
             if (questionNumber == 10)
-                intent = new Intent(this, ResultsActivity.class);
+                intent = new Intent(this, FinalScoreActivity.class);
             else {
                 questionNumber = questionNumber + 1;
                 intent = new Intent(this, RadioButtonActivity.class);
+                intent.putExtra("question_number", questionNumber);
+                intent.putIntegerArrayListExtra("edit_text_questions_order", editTextQuestionsOrder);
+                intent.putIntegerArrayListExtra("check_box_questions_order", checkBoxQuestionsOrder);
+                intent.putIntegerArrayListExtra("radio_button_questions_order", radioButtonQuestionsOrder);
             }
             intent.putExtra("right_answers", rightAnswers);
             intent.putExtra("player_name", playerName);
-            intent.putExtra("question_number", questionNumber);
             startActivity(intent);
         }
     }

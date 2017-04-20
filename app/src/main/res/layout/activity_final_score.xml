@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.educationalapp.FinalScoreActivity">
+
+    <ImageView
+        android:id="@+id/activity_results_background"
+        style="@style/MyBackgroundImage"
+        android:contentDescription="@string/result_activity_background"
+        android:src="@drawable/jedi_masters" />
+
+    <ImageView
+        style="@style/MyBackgroundLayer"
+        android:contentDescription="@string/background_layer" />
+
+    <ScrollView style="@style/MyScrollView">
+
+        <LinearLayout style="@style/MyLinearLayout1">
+
+            <ImageView
+                style="@style/MyHeaderImage"
+                android:contentDescription="@string/header_image" />
+
+            <TextView
+                android:id="@+id/activity_results_title"
+                style="@style/MyMenuTitle1"
+                android:layout_marginBottom="@dimen/medium_margin_padding_size"
+                android:text="@string/main_menu_title" />
+
+            <TextView
+                android:id="@+id/activity_results_header"
+                style="@style/MyWhiteTextView"
+                android:text="@string/test_result_header" />
+
+            <TextView
+                android:id="@+id/activity_results_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/medium_margin_padding_size"
+                android:layout_marginTop="@dimen/medium_margin_padding_size"
+                android:gravity="center_horizontal"
+                android:text="@string/default_test_result"
+                android:textColor="#ffff00"
+                android:textSize="26sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/activity_results_comments"
+                style="@style/MyWhiteTextView"
+                android:text="@string/default_text" />
+
+            <Button
+                android:id="@+id/activity_results_try_again"
+                style="@style/MyButton"
+                android:onClick="finish"
+                android:text="@string/try_again" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

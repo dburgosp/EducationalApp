@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,51 +11,38 @@
         android:layout_height="match_parent"
         android:src="@drawable/main_menu_bg" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/medium_margin_padding_size"
-        android:alpha="0.5"
-        android:background="@drawable/bg_layer" />
+    <ImageView style="@style/MyBackgroundLayer" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+    <ScrollView style="@style/MyScrollView">
 
-        <ImageView style="@style/HeaderImage" />
+        <LinearLayout style="@style/MyLinearLayout1">
 
-        <TextView style="@style/MenuTitle" />
-
-        <TextView
-            android:id="@+id/main_menu_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/medium_margin_padding_size"
-            android:layout_marginLeft="@dimen/max_margin_padding_size"
-            android:layout_marginRight="@dimen/max_margin_padding_size"
-            android:layout_marginTop="@dimen/max_margin_padding_size"
-            android:gravity="center_horizontal"
-            android:text="@string/main_menu_description"
-            android:textColor="@android:color/white" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            <ImageView style="@style/MyHeaderImage" />
 
             <TextView
-                style="@style/CommonButton"
-                android:onClick="letsGo"
-                android:text="@string/lets_go" />
-            <!---
-                        <TextView
-                            style="@style/CommonButton"
-                            android:onClick="hallOfFame"
-                            android:text="@string/hall_of_fame" />
-            -->
+                android:id="@+id/activity_main_menu_title"
+                style="@style/MyMenuTitle1"
+                android:text="@string/main_menu_title" />
+
+            <TextView
+                android:id="@+id/activity_main_menu_description"
+                style="@style/MyWhiteTextView"
+                android:layout_marginBottom="@dimen/min_margin_padding_size"
+                android:layout_marginTop="@dimen/min_margin_padding_size"
+                android:text="@string/main_menu_description" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/activity_main_menu_begin_button"
+                    style="@style/MyButton"
+                    android:onClick="letsGo"
+                    android:text="@string/lets_go" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

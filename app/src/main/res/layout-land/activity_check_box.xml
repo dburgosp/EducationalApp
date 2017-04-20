@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.educationalapp.CheckBoxActivity">
+
+    <ImageView
+        android:id="@+id/activity_check_box_background"
+        style="@style/MyBackgroundImage"
+        android:src="@drawable/_01_jar_jar_binks" />
+
+    <ImageView style="@style/MyBackgroundLayer" />
+
+    <ScrollView style="@style/MyScrollView">
+
+        <LinearLayout style="@style/MyLinearLayout1">
+
+            <TextView
+                android:id="@+id/activity_check_box_title"
+                style="@style/MyMenuTitle2"
+                android:text="@string/main_menu_title" />
+
+            <TextView style="@style/MyHorizontalBar" />
+
+            <LinearLayout style="@style/MyLinearLayout2">
+
+                <LinearLayout style="@style/MyLinearLayout3">
+
+                    <TextView
+                        android:id="@+id/activity_check_box_question_number"
+                        style="@style/MyMenuTitle1"
+                        android:text="Question #" />
+
+                    <TextView
+                        android:id="@+id/activity_check_box_description"
+                        style="@style/MyWhiteTextView"
+                        android:text="Question" />
+
+                    <TextView
+                        android:id="@+id/activity_check_box_advice"
+                        style="@style/MySmallWhiteTextView"
+                        android:layout_marginBottom="@dimen/medium_margin_padding_size"
+                        android:text="@string/check_box_advice" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/MyLinearLayout3">
+
+                    <CheckBox
+                        android:id="@+id/activity_check_box_answer_1"
+                        style="@style/MyRadioButton"
+                        android:onClick="selectAnswer"
+                        android:text="answer 1" />
+
+                    <CheckBox
+                        android:id="@+id/activity_check_box_answer_2"
+                        style="@style/MyRadioButton"
+                        android:onClick="selectAnswer"
+                        android:text="answer 2" />
+
+                    <CheckBox
+                        android:id="@+id/activity_check_box_answer_3"
+                        style="@style/MyRadioButton"
+                        android:onClick="selectAnswer"
+                        android:text="answer 3" />
+
+                    <CheckBox
+                        android:id="@+id/activity_check_box_answer_4"
+                        style="@style/MyRadioButton"
+                        android:onClick="selectAnswer"
+                        android:text="answer 4" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView style="@style/MyHorizontalBar" />
+
+            <Button
+                android:id="@+id/activity_check_box_submit_button"
+                style="@style/MyButton"
+                android:onClick="submitCheckBoxAnswer"
+                android:text="@string/submit_answer" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

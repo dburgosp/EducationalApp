@@ -43,23 +43,89 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="CommonButton">
+    <style name="MyButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">@dimen/max_margin_padding_size</item>
-        <item name="android:layout_marginTop">@dimen/medium_margin_padding_size</item>
-        <item name="android:layout_marginLeft">@dimen/medium_margin_padding_size</item>
-        <item name="android:layout_marginRight">@dimen/medium_margin_padding_size</item>
-        <item name="android:background">@drawable/bg_layer</item>
-        <item name="android:paddingBottom">@dimen/min_margin_padding_size</item>
+        <item name="android:layout_margin">@dimen/max_margin_padding_size</item>
         <item name="android:paddingLeft">@dimen/medium_margin_padding_size</item>
         <item name="android:paddingRight">@dimen/medium_margin_padding_size</item>
-        <item name="android:paddingTop">@dimen/min_margin_padding_size</item>
+        <item name="android:background">@drawable/bg_layer</item>
         <item name="android:textColor">#ffff00</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="RadioButtonStyle">
+    <style name="MyWhiteTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="MyScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/medium_margin_padding_size</item>
+        <item name="android:fillViewport">true</item>
+    </style>
+
+    <style name="MyBackgroundLayer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">@dimen/medium_margin_padding_size</item>
+        <item name="android:alpha">0.75</item>
+        <item name="android:background">@drawable/bg_layer</item>
+    </style>
+
+    <style name="MyBackgroundImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="MyLinearLayout1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/medium_margin_padding_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MyLinearLayout2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/medium_margin_padding_size</item>
+        <item name="android:layout_marginRight">@dimen/medium_margin_padding_size</item>
+        <item name="android:layout_marginLeft">@dimen/medium_margin_padding_size</item>
+        <item name="android:layout_marginBottom">@dimen/min_margin_padding_size</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MyLinearLayout3">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/min_margin_padding_size</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MyLinearLayout4">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MyEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+    </style>
+
+    <style name="MyRadioButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:buttonTint">#ffff00</item>
@@ -67,21 +133,54 @@
         <item name="android:layout_marginBottom">@dimen/min_margin_padding_size</item>
     </style>
 
-    <style name="HeaderImage">
+    <style name="MyHeaderImage">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/medium_margin_padding_size</item>
-        <item name="android:layout_marginTop">@dimen/max_margin_padding_size</item>
+        <item name="android:layout_marginTop">@dimen/min_margin_padding_size</item>
         <item name="android:src">@drawable/logo</item>
     </style>
 
-    <style name="MenuTitle">
+    <style name="MySmallWhiteTextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:text">@string/main_menu_title</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/medium_margin_padding_size</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MyMenuTitle1">
+        <item name="android:layout_marginBottom">@dimen/min_margin_padding_size</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/min_margin_padding_size</item>
+        <item name="android:paddingBottom">@dimen/min_margin_padding_size</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">#ffff00</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyMenuTitle2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/min_margin_padding_size</item>
+        <item name="android:paddingBottom">@dimen/min_margin_padding_size</item>
+        <item name="android:paddingTop">@dimen/min_margin_padding_size</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">#ffff00</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyHorizontalBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">3dp</item>
+        <item name="android:alpha">0.75</item>
+        <item name="android:background">#ffff00</item>
     </style>
 </resources>

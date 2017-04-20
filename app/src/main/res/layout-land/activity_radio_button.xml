@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.educationalapp.RadioButtonActivity">
+
+    <ImageView
+        android:id="@+id/activity_radio_button_background"
+        style="@style/MyBackgroundImage"
+        android:src="@drawable/_01_jar_jar_binks" />
+
+    <ImageView style="@style/MyBackgroundLayer" />
+
+    <ScrollView style="@style/MyScrollView">
+
+        <LinearLayout style="@style/MyLinearLayout1">
+
+            <TextView
+                android:id="@+id/activity_radio_button_title"
+                style="@style/MyMenuTitle2"
+                android:text="@string/main_menu_title" />
+
+            <TextView style="@style/MyHorizontalBar" />
+
+            <LinearLayout style="@style/MyLinearLayout2">
+
+                <LinearLayout style="@style/MyLinearLayout3">
+
+                    <TextView
+                        android:id="@+id/activity_radio_button_question_number"
+                        style="@style/MyMenuTitle1"
+                        android:text="Question #" />
+
+                    <TextView
+                        android:id="@+id/activity_radio_button_description"
+                        style="@style/MyWhiteTextView"
+                        android:layout_marginBottom="@dimen/min_margin_padding_size"
+                        android:text="Question" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/MyLinearLayout3">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/activity_radio_button_answer_1"
+                            style="@style/MyRadioButton"
+                            android:onClick="checkRadioButton"
+                            android:text="answer 1" />
+
+                        <RadioButton
+                            android:id="@+id/activity_radio_button_answer_2"
+                            style="@style/MyRadioButton"
+                            android:onClick="checkRadioButton"
+                            android:text="answer 2" />
+
+                        <RadioButton
+                            android:id="@+id/activity_radio_button_answer_3"
+                            style="@style/MyRadioButton"
+                            android:onClick="checkRadioButton"
+                            android:text="answer 3" />
+
+                        <RadioButton
+                            android:id="@+id/activity_radio_button_answer_4"
+                            style="@style/MyRadioButton"
+                            android:onClick="checkRadioButton"
+                            android:text="answer 4" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView style="@style/MyHorizontalBar" />
+
+            <Button
+                android:id="@+id/activity_radio_button_submit_button"
+                style="@style/MyButton"
+                android:onClick="submitRadioButtonAnswer"
+                android:text="@string/submit_answer" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

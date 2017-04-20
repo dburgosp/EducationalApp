@@ -6,6 +6,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -16,26 +17,26 @@
             android:configChanges="screenSize|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".MainMenuActivity" />
         <activity
+            android:name=".LoginActivity"
+            android:configChanges="screenSize|orientation" />
+        <activity android:name=".RadioButtonActivity" />
+        <activity
             android:name=".EditTextActivity"
             android:configChanges="screenSize|orientation" />
+        <activity android:name=".CheckBoxActivity" />
         <activity
-            android:name=".RadioButtonActivity"
+            android:name=".FinalScoreActivity"
             android:configChanges="screenSize|orientation" />
-        <activity
-            android:name=".CheckBoxActivity"
-            android:configChanges="screenSize|orientation" />
-        <activity android:name=".HallOfFameActivity" />
         <activity
             android:name=".DiplomaActivity"
             android:configChanges="screenSize|orientation" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ResultsActivity"></activity>
     </application>
 
 </manifest>

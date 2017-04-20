@@ -8,99 +8,71 @@
     tools:context="com.example.android.educationalapp.DiplomaActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/jedi_masters" />
+        style="@style/MyBackgroundImage"
+        android:src="@drawable/star_wars_celebration" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/medium_margin_padding_size"
-        android:alpha="0.75"
-        android:background="@drawable/bg_layer" />
+    <ImageView style="@style/MyBackgroundLayer" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+    <ScrollView style="@style/MyScrollView">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/max_margin_padding_size"
-            android:text="Diploma"
-            android:textAllCaps="true"
-            android:textColor="#ffff00"
-            android:textSize="36sp"
-            android:textStyle="bold" />
+        <LinearLayout style="@style/MyLinearLayout1">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/max_margin_padding_size"
-            android:layout_marginRight="@dimen/max_margin_padding_size"
-            android:gravity="center_horizontal"
-            android:text="@string/diploma_first_line"
-            android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin_padding_size"
+                android:text="Diploma"
+                android:textAllCaps="true"
+                android:textColor="#ffff00"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/diploma_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/min_margin_padding_size"
-            android:layout_marginLeft="@dimen/max_margin_padding_size"
-            android:layout_marginRight="@dimen/max_margin_padding_size"
-            android:layout_marginTop="@dimen/min_margin_padding_size"
-            android:gravity="center_horizontal"
-            android:text="David Burgos"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="italic" />
+            <TextView
+                style="@style/MyWhiteTextView"
+                android:text="@string/diploma_first_line" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/max_margin_padding_size"
-            android:layout_marginRight="@dimen/max_margin_padding_size"
-            android:gravity="center_horizontal"
-            android:text="@string/diploma_second_line"
-            android:textColor="@android:color/white" />
+            <TextView
+                android:id="@+id/diploma_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/min_margin_padding_size"
+                android:layout_marginLeft="@dimen/max_margin_padding_size"
+                android:layout_marginRight="@dimen/max_margin_padding_size"
+                android:layout_marginTop="@dimen/min_margin_padding_size"
+                android:gravity="center_horizontal"
+                android:text="David Burgos"
+                android:textColor="#ffff00"
+                android:textSize="20sp"
+                android:textStyle="italic" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/medium_margin_padding_size"
-            android:layout_marginLeft="@dimen/max_margin_padding_size"
-            android:layout_marginRight="@dimen/max_margin_padding_size"
-            android:layout_marginTop="@dimen/min_margin_padding_size"
-            android:gravity="center_horizontal"
-            android:text="@string/jedi_master"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                style="@style/MyWhiteTextView"
+                android:text="@string/diploma_second_line" />
 
-        <TextView
-            android:id="@+id/diploma_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/max_margin_padding_size"
-            android:layout_marginRight="@dimen/max_margin_padding_size"
-            android:gravity="center_horizontal"
-            android:text="@string/diploma_third_line"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
-        <!---
-                    <TextView
-                        style="@style/CommonButton"
-                        android:onClick="hallOfFame"
-                        android:text="@string/hall_of_fame" />
-        -->
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/medium_margin_padding_size"
+                android:layout_marginLeft="@dimen/max_margin_padding_size"
+                android:layout_marginRight="@dimen/max_margin_padding_size"
+                android:layout_marginTop="@dimen/min_margin_padding_size"
+                android:gravity="center_horizontal"
+                android:text="@string/jedi_master"
+                android:textAllCaps="true"
+                android:textColor="#ffff00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/diploma_date"
+                style="@style/MySmallWhiteTextView"
+                android:text="@string/diploma_third_line" />
+            <!---
+                        <TextView
+                            style="@style/CommonButton"
+                            android:onClick="hallOfFame"
+                            android:text="@string/hall_of_fame" />
+            -->
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

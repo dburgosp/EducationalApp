@@ -7,84 +7,52 @@
     tools:context="com.example.android.educationalapp.EditTextActivity">
 
     <ImageView
-        android:id="@+id/edit_text_background_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
+        android:id="@+id/activity_edit_text_background"
+        style="@style/MyBackgroundImage"
         android:src="@drawable/_03_chewbacca" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/medium_margin_padding_size"
-        android:alpha="0.75"
-        android:background="@drawable/bg_layer">
+    <ImageView style="@style/MyBackgroundLayer" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/medium_margin_padding_size"
-            android:layout_marginRight="@dimen/medium_margin_padding_size"
-            android:layout_marginTop="@dimen/medium_margin_padding_size"
-            android:gravity="center"
-            android:orientation="vertical">
+    <ScrollView style="@style/MyScrollView">
+
+        <LinearLayout style="@style/MyLinearLayout1">
 
             <TextView
-                android:id="@+id/test_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/min_margin_padding_size"
-                android:layout_marginTop="@dimen/min_margin_padding_size"
-                android:text="@string/main_menu_title"
-                android:textAllCaps="true"
-                android:textColor="#ffff00"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:id="@+id/activity_edit_text_title"
+                style="@style/MyMenuTitle2"
+                android:text="@string/main_menu_title" />
+
+            <TextView style="@style/MyHorizontalBar" />
 
             <TextView
-                android:id="@+id/edit_text_question_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/max_margin_padding_size"
-                android:text="Question #3"
-                android:textAllCaps="true"
-                android:textColor="#ffff00"
-                android:textStyle="bold" />
+                android:id="@+id/activity_edit_text_question_number"
+                style="@style/MyMenuTitle1"
+                android:text="Question #" />
 
             <TextView
-                android:id="@+id/edit_text_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:id="@+id/activity_edit_text_description"
+                style="@style/MyWhiteTextView"
                 android:layout_marginBottom="@dimen/medium_margin_padding_size"
-                android:gravity="center_horizontal"
-                android:text="Question"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:text="Question" />
 
             <EditText
-                android:id="@+id/edit_text_answer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
+                android:id="@+id/activity_edit_text_answer"
+                style="@style/MyEditText"
                 android:hint="@string/edit_text_quiz_hint"
-                android:textColor="@android:color/darker_gray"
-                android:textColorHint="@android:color/darker_gray"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/edit_text_advice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/medium_margin_padding_size"
-                android:gravity="center_horizontal"
-                android:text="@string/edit_text_advice"
-                android:textColor="@android:color/white" />
+                android:id="@+id/activity_edit_text_advice"
+                style="@style/MySmallWhiteTextView"
+                android:layout_marginBottom="@dimen/min_margin_padding_size"
+                android:text="@string/edit_text_advice" />
 
-            <TextView
-                style="@style/CommonButton"
-                android:onClick="submitAnswer"
+            <TextView style="@style/MyHorizontalBar" />
+
+            <Button
+                android:id="@+id/activity_edit_text_submit_button"
+                style="@style/MyButton"
+                android:onClick="submitEditTextAnswer"
                 android:text="@string/submit_answer" />
         </LinearLayout>
     </ScrollView>
