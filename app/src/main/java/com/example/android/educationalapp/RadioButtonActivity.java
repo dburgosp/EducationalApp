@@ -18,10 +18,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class RadioButtonActivity extends AppCompatActivity {
-    ArrayList<String> answers;
-    RadioButtonQuestion radioButtonQuestion;
     int checked = 0, questionNumber, rightAnswers, rightAnswer;
     String playerName, question;
+    ImageView imageView;
+    RadioButtonQuestion radioButtonQuestion;
+    ArrayList<String> answers;
     ArrayList<Integer> editTextQuestionsOrder, checkBoxQuestionsOrder, radioButtonQuestionsOrder;
 
     @Override
@@ -56,7 +57,7 @@ public class RadioButtonActivity extends AppCompatActivity {
         radioButtonQuestion = new RadioButtonQuestion(question, answers, rightAnswer);
 
         // Set background image.
-        ImageView imageView = (ImageView) findViewById(R.id.activity_radio_button_background);
+        imageView = (ImageView) findViewById(R.id.activity_radio_button_background);
         switch (questionNumber) {
             case 1:
                 imageView.setImageResource(R.drawable._01_jar_jar_binks);
@@ -92,9 +93,9 @@ public class RadioButtonActivity extends AppCompatActivity {
      * Get context variables for RadioButtonActivity.
      */
     void getContext() {
-        editTextQuestionsOrder = new ArrayList<Integer>();
-        checkBoxQuestionsOrder = new ArrayList<Integer>();
-        radioButtonQuestionsOrder = new ArrayList<Integer>();
+        editTextQuestionsOrder = new ArrayList<>();
+        checkBoxQuestionsOrder = new ArrayList<>();
+        radioButtonQuestionsOrder = new ArrayList<>();
 
         playerName = getIntent().getExtras().getString("player_name");
         questionNumber = getIntent().getExtras().getInt("question_number");
@@ -121,7 +122,7 @@ public class RadioButtonActivity extends AppCompatActivity {
         question = getResources().getString(idQuestion).toUpperCase();
         Log.i("RadioButtonActivity", "initQuestions - Question " + (n + 1) + ": " + question);
 
-        answers = new ArrayList<String>();
+        answers = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             idAnswer = getResources().getIdentifier("radio_button_question_" + (n + 1) + "_answer_" + (i + 1), "string", getPackageName());
             answer = getResources().getString(idAnswer).toUpperCase();
@@ -137,7 +138,7 @@ public class RadioButtonActivity extends AppCompatActivity {
     /**
      * Actions to be done when a RadioButton is checked on activity_radio_button.xml.
      *
-     * @param view
+     * @param view from which this method is called.
      */
     public void checkRadioButton(View view) {
         // Play a sound.
@@ -167,7 +168,7 @@ public class RadioButtonActivity extends AppCompatActivity {
     /**
      * Actions to be done when submit button is clicked on activity_radio_button.xml.
      *
-     * @param view
+     * @param view from which this method is called.
      */
     public void submitRadioButtonAnswer(View view) {
         Intent intent;
@@ -199,6 +200,9 @@ public class RadioButtonActivity extends AppCompatActivity {
                 rightAnswers = rightAnswers + 1;
             }
 
+            // Free memory.
+            imageView.setBackground(null);
+
             // Start next activity.
             intent.putExtra("right_answers", rightAnswers);
             intent.putExtra("player_name", playerName);
@@ -207,6 +211,7 @@ public class RadioButtonActivity extends AppCompatActivity {
             intent.putIntegerArrayListExtra("check_box_questions_order", checkBoxQuestionsOrder);
             intent.putIntegerArrayListExtra("radio_button_questions_order", radioButtonQuestionsOrder);
             startActivity(intent);
+            finish();
         }
     }
 

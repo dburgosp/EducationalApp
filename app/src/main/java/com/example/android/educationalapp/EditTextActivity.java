@@ -21,6 +21,7 @@ public class EditTextActivity extends AppCompatActivity {
     int questionNumber, rightAnswers;
     String playerName, rightAnswer, question, answer, minAnswer;
     EditTextQuestion editTextQuestion;
+    ImageView imageView;
     ArrayList<Integer> editTextQuestionsOrder, checkBoxQuestionsOrder, radioButtonQuestionsOrder;
 
     @Override
@@ -59,7 +60,7 @@ public class EditTextActivity extends AppCompatActivity {
         editTextQuestion = new EditTextQuestion(question, answer, minAnswer);
 
         // Set background image.
-        ImageView imageView = (ImageView) findViewById(R.id.activity_edit_text_background);
+        imageView = (ImageView) findViewById(R.id.activity_edit_text_background);
         switch (questionNumber) {
             case 2:
                 imageView.setImageResource(R.drawable._02_boba_fett);
@@ -83,9 +84,9 @@ public class EditTextActivity extends AppCompatActivity {
      * Get context variables for EditTextActivity.
      */
     void getContext() {
-        editTextQuestionsOrder = new ArrayList<Integer>();
-        checkBoxQuestionsOrder = new ArrayList<Integer>();
-        radioButtonQuestionsOrder = new ArrayList<Integer>();
+        editTextQuestionsOrder = new ArrayList<>();
+        checkBoxQuestionsOrder = new ArrayList<>();
+        radioButtonQuestionsOrder = new ArrayList<>();
 
         playerName = getIntent().getExtras().getString("player_name");
         questionNumber = getIntent().getExtras().getInt("question_number");
@@ -123,7 +124,7 @@ public class EditTextActivity extends AppCompatActivity {
     /**
      * Actions to be done when submit button is clicked on activity_edit_text.xml.
      *
-     * @param view
+     * @param view from which this method is called.
      */
     public void submitEditTextAnswer(View view) {
         EditText editText = (EditText) findViewById(R.id.activity_edit_text_answer);
@@ -142,6 +143,9 @@ public class EditTextActivity extends AppCompatActivity {
                 rightAnswers = rightAnswers + 1;
             }
 
+            // Free memory.
+            imageView.setBackground(null);
+
             // Start next activity.
             Intent intent;
             if (questionNumber == 10)
@@ -157,6 +161,7 @@ public class EditTextActivity extends AppCompatActivity {
             intent.putExtra("right_answers", rightAnswers);
             intent.putExtra("player_name", playerName);
             startActivity(intent);
+            finish();
         }
     }
 }

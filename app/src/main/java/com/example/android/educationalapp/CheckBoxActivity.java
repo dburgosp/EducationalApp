@@ -21,6 +21,7 @@ public class CheckBoxActivity extends AppCompatActivity {
     int questionNumber, rightAnswers;
     String playerName, question;
     CheckBoxQuestion checkBoxQuestion;
+    ImageView imageView;
     ArrayList<String> arrayOfCurrentAnswers, arrayOfAnswers, arrayOfRightAnswers;
     ArrayList<Integer> editTextQuestionsOrder, checkBoxQuestionsOrder, radioButtonQuestionsOrder;
 
@@ -55,7 +56,7 @@ public class CheckBoxActivity extends AppCompatActivity {
         textViewAdvice.setText(getResources().getString(R.string.check_box_advice, playerName));
 
         // Set background image.
-        ImageView imageView = (ImageView) findViewById(R.id.activity_check_box_background);
+        imageView = (ImageView) findViewById(R.id.activity_check_box_background);
         switch (questionNumber) {
             case 4:
                 imageView.setImageResource(R.drawable._04_r2_d2);
@@ -89,12 +90,12 @@ public class CheckBoxActivity extends AppCompatActivity {
      * Get context variables for CheckBoxActivity.
      */
     void getContext() {
-        arrayOfCurrentAnswers = new ArrayList<String>();
+        arrayOfCurrentAnswers = new ArrayList<>();
         for (int i = 0; i < 4; i++) arrayOfCurrentAnswers.add(i, "FALSE");
 
-        editTextQuestionsOrder = new ArrayList<Integer>();
-        checkBoxQuestionsOrder = new ArrayList<Integer>();
-        radioButtonQuestionsOrder = new ArrayList<Integer>();
+        editTextQuestionsOrder = new ArrayList<>();
+        checkBoxQuestionsOrder = new ArrayList<>();
+        radioButtonQuestionsOrder = new ArrayList<>();
 
         playerName = getIntent().getExtras().getString("player_name");
         questionNumber = getIntent().getExtras().getInt("question_number");
@@ -121,7 +122,7 @@ public class CheckBoxActivity extends AppCompatActivity {
         question = getResources().getString(idQuestion).toUpperCase();
         Log.i("CheckBoxActivity", "initQuestions - Question " + (n + 1) + ": " + question);
 
-        arrayOfAnswers = new ArrayList<String>();
+        arrayOfAnswers = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             idAnswer = getResources().getIdentifier("check_box_question_" + (n + 1) + "_answer_" + (i + 1), "string", getPackageName());
             answer = getResources().getString(idAnswer).toUpperCase();
@@ -129,7 +130,7 @@ public class CheckBoxActivity extends AppCompatActivity {
             arrayOfAnswers.add(i, answer);
         }
 
-        arrayOfRightAnswers = new ArrayList<String>();
+        arrayOfRightAnswers = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             idRightAnswer = getResources().getIdentifier("check_box_question_" + (n + 1) + "_answer_" + (i + 1) + "_is_correct", "string", getPackageName());
             rightAnswer = getResources().getString(idRightAnswer).toUpperCase();
@@ -141,7 +142,7 @@ public class CheckBoxActivity extends AppCompatActivity {
     /**
      * Actions to be done when a CheckBox is checked on activity_check_box.xml.
      *
-     * @param view
+     * @param view from which this method is called.
      */
     public void selectAnswer(View view) {
         // Play a sound.
@@ -187,7 +188,7 @@ public class CheckBoxActivity extends AppCompatActivity {
     /**
      * Actions to be done when submit button is clicked on activity_check_box.xml.
      *
-     * @param view
+     * @param view from which this method is called.
      */
     public void submitCheckBoxAnswer(View view) {
         if (!isChecked()) {
@@ -204,6 +205,9 @@ public class CheckBoxActivity extends AppCompatActivity {
                 rightAnswers = rightAnswers + 1;
             }
 
+            // Free memory.
+            imageView.setBackground(null);
+
             // Start next activity.
             Intent intent = new Intent(this, RadioButtonActivity.class);
             intent.putExtra("right_answers", rightAnswers);
@@ -213,6 +217,7 @@ public class CheckBoxActivity extends AppCompatActivity {
             intent.putIntegerArrayListExtra("check_box_questions_order", checkBoxQuestionsOrder);
             intent.putIntegerArrayListExtra("radio_button_questions_order", radioButtonQuestionsOrder);
             startActivity(intent);
+            finish();
         }
     }
 

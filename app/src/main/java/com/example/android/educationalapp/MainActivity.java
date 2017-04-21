@@ -58,5 +58,6 @@ public class MainActivity extends AppCompatActivity {
         // Show activity_main_menu.
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
+        finish();
     }
 }

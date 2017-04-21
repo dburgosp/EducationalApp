@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class FinalScoreActivity extends AppCompatActivity {
     int rightAnswers;
     String playerName;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +46,11 @@ public class FinalScoreActivity extends AppCompatActivity {
         textViewResultsHeader.setText(getResources().getString(R.string.test_result_header, playerName));
 
         // Show the results.
-        textView3.setText(getString(rightAnswers, "/10"));
+        String score = rightAnswers + "/10";
+        textView3.setText(score);
 
         // Set background image and text for comments.
-        ImageView imageView = (ImageView) findViewById(R.id.activity_results_background);
+        imageView = (ImageView) findViewById(R.id.activity_results_background);
         TextView textViewComments = (TextView) findViewById(R.id.activity_results_comments);
         MediaPlayer mediaPlayer1, mediaPlayer2;
         switch (rightAnswers) {
@@ -152,12 +154,15 @@ public class FinalScoreActivity extends AppCompatActivity {
     /**
      * Things to do when button is clicked.
      *
-     * @param view
+     * @param view from which this method is called.
      */
     public void finish(View view) {
         // Play a sound.
         MediaPlayer mediaPlayer = MediaPlayer.create(FinalScoreActivity.this, R.raw._light_saber);
         mediaPlayer.start();
+
+        // Free memory.
+        imageView.setBackground(null);
 
         // Behaviour of the button.
         Intent intent;
@@ -165,5 +170,6 @@ public class FinalScoreActivity extends AppCompatActivity {
         else intent = new Intent(this, MainMenuActivity.class);
         intent.putExtra("player_name", playerName);
         startActivity(intent);
+        finish();
     }
 }

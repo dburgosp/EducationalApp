@@ -55,5 +55,6 @@ public class DiplomaActivity extends AppCompatActivity {
         mediaPlayer.pause();
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
+        finish();
     }
 }
