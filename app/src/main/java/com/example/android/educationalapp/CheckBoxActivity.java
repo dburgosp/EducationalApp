@@ -193,7 +193,7 @@ public class CheckBoxActivity extends AppCompatActivity {
     public void submitCheckBoxAnswer(View view) {
         if (!isChecked()) {
             // No answer selected.
-            Toast toast = Toast.makeText(this, R.string.radio_button_mandatory, Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, R.string.check_box_mandatory, Toast.LENGTH_SHORT);
             toast.show();
         } else {
             // Play a sound.

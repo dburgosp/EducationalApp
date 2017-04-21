@@ -17,7 +17,9 @@
 
     <ScrollView style="@style/MyScrollView">
 
-        <LinearLayout style="@style/MyLinearLayout1">
+        <LinearLayout
+            android:id="@+id/activity_final_score_layout"
+            style="@style/MyLinearLayout1">
 
             <ImageView
                 style="@style/MyHeaderImage"

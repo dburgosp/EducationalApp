@@ -17,6 +17,7 @@ public class FinalScoreActivity extends AppCompatActivity {
     int rightAnswers;
     String playerName;
     ImageView imageView;
+    MediaPlayer mediaPlayer1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,7 @@ public class FinalScoreActivity extends AppCompatActivity {
         // Set background image and text for comments.
         imageView = (ImageView) findViewById(R.id.activity_results_background);
         TextView textViewComments = (TextView) findViewById(R.id.activity_results_comments);
-        MediaPlayer mediaPlayer1, mediaPlayer2;
+        MediaPlayer mediaPlayer2;
         switch (rightAnswers) {
             case 0:
                 imageView.setImageResource(R.drawable._00_ewok);
@@ -165,6 +166,7 @@ public class FinalScoreActivity extends AppCompatActivity {
         imageView.setBackground(null);
 
         // Behaviour of the button.
+        mediaPlayer1.pause();
         Intent intent;
         if (rightAnswers == 10) intent = new Intent(this, DiplomaActivity.class);
         else intent = new Intent(this, MainMenuActivity.class);

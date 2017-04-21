@@ -22,6 +22,7 @@
     <string name="edit_text_quiz_hint">Type your answer here</string>
     <string name="lets_go">Let\'s go!</string>
     <string name="radio_button_mandatory">You must select one option</string>
+    <string name="check_box_mandatory">Select one option at least</string>
     <string name="type_answer_error">Answer cannot be empty</string>
     <string name="try_again">Try again</string>
     <string name="get_your_diploma">Get your Diploma!</string>
@@ -29,7 +30,7 @@
     <string name="jedi_master">Jedi Master</string>
     <string name="diploma_third_line">Issued in a galaxy far, far away, on <xliff:g example="01/01/2017" id="date">%s</xliff:g></string>
     <string name="diploma_first_line">The Jedi High Council certifies that</string>
-    <string name="diploma_second_line">has succesfully completed the required studies and fulfilled the requeriments of this Academy and, in testimony whereof, has been recognized to the title of</string>
+    <string name="diploma_second_line">has successfully completed the required studies and fulfilled the requeriments of this Academy and, in testimony whereof, has been recognized to the title of</string>
     <string name="result_activity_background">Star Wars Celebration</string>
     <string name="background_layer">Background Layer</string>
     <string name="header_image">Android Basics Nanodegree</string>
@@ -37,17 +38,17 @@
     <string name="default_text">Lorem ipsum dolor sit amet</string>
 
     <!--- Comments for FinalScoreActivity -->
-    <string name="test_result_comments_0">For goodness\' sake! You got a lower score than Jar Jar Binks ... It\'s amazing, not even an Ewok would make it worse. Tell me the truth: you really are a Star Trek fan, right?</string>
-    <string name="test_result_comments_1">Congratulations! ... I say it wryly, of course. You could not get a higher score than Jar Jar Binks, the most awkward creature in the Galaxy! You must improve a lot, young Padawan.</string>
-    <string name="test_result_comments_2">Very bad! You\'ve got the same score than Boba Fett, who came to the exam without studying and got caught copying. At least you will be allowed to repeat the test.</string>
-    <string name="test_result_comments_3">What can I say ... You haven\'t been able to overcome Chebwacca\'s level of knowledge. At least you have not taken it as badly as he did, and the teacher is still holding his head ... on his shoulders.</string>
-    <string name="test_result_comments_4">You\'ve got the same rating than R2-D2. Of course he has no arms to select the correct answers on the test ... What is your excuse?</string>
-    <string name="test_result_comments_5">You\'ve passed by the skin of your teeth. You have answered as many questions as Padme Amidala, who didn\'t study because he had just started dating Anakin and had her head in the clouds.</string>
-    <string name="test_result_comments_6">Well, it\'s not bad at all. Princess Leia got the same rating than you, though she was more concerned about some Galactic Senate affairs. Could you do it better.</string>
-    <string name="test_result_comments_7">Hey, very good level! Obi Wan also correctly answered 7 questions, but that happened when he was young. If he had taken this test during the Classic Trilogy, I would have scored all the 10 questions, for sure.</string>
-    <string name="test_result_comments_8">Hurrah! You have reached the same level of success than Luke Skywalker! It is obvious that The Force is strong with you. Keep it up and you will become a Jedi Master soon.</string>
-    <string name="test_result_comments_9">Awesome! You have the same level of knowledge than Darth Vader himself! Well, he actually answered all the 10 questions, but they took one point off by going over to the Dark Side ...</string>
-    <string name="test_result_comments_10">Congratulations!!! You are a true Star Wars fan! You answered all the questions! You have reached the level of a Jedi Master, like Yoda. You can pick up your Diploma, you really deserve it!</string>
+    <string name="test_result_comments_0">For goodness\' sake! You got a lower score than Jar Jar Binks &#8230;\nIt\'s amazing, not even an Ewok would make it worse. Tell me the truth: you really are a Star Trek fan, right?</string>
+    <string name="test_result_comments_1">Congratulations! &#8230; I say it wryly, of course. You could not get a higher score than Jar Jar Binks, the most awkward creature in the Galaxy!\nYou must improve a lot, young Padawan.</string>
+    <string name="test_result_comments_2">Very bad! You\'ve got the same score than Boba Fett, who didn\'t study for the exam without and also got caught copying.\nAt least you will be allowed to do the test again.</string>
+    <string name="test_result_comments_3">What can I say &#8230; You haven\'t been able to overcome Chebwacca\'s level of knowledge.\nAt least you have not taken it as badly as he did, and the teacher is still holding his head &#8230; on his shoulders.</string>
+    <string name="test_result_comments_4">You\'ve got the same rating than R2-D2.\nOf course he has no arms to select the correct answers on the test &#8230; What is your excuse?</string>
+    <string name="test_result_comments_5">You\'ve passed by the skin of your teeth.\nYou have answered as many questions as Padme Amidala, who didn\'t study for the test because he had just started dating Anakin and had her head in the clouds.</string>
+    <string name="test_result_comments_6">Well, it\'s not bad at all.\nPrincess Leia got the same rating than you, though she was more concerned about some Galactic Senate affairs. Maybe you could do it a little better.</string>
+    <string name="test_result_comments_7">Hey, very good level!\nObi Wan also correctly answered 7 questions, but that happened when he was young. If he had taken this test during the Classic Trilogy, he would have scored all the 10 questions, for sure.</string>
+    <string name="test_result_comments_8">Hurrah! You have reached the same level of success than Luke Skywalker!\nIt is obvious that The Force is strong with you. Keep it up and you will become a Jedi Master soon.</string>
+    <string name="test_result_comments_9">Awesome! You have the same level of knowledge than Darth Vader himself!\nWell, he actually answered all the 10 questions, but they took one point off by going over to the Dark Side &#8230;</string>
+    <string name="test_result_comments_10">Congratulations!!! You are a true Star Wars fan! You answered all the questions and have reached the level of a Jedi Master, like Yoda!\nYou can pick up your Diploma, you really deserve it!</string>
 
     <!--- Questions and answers for CheckBoxActivity -->
     <string name="check_box_question_1">Which of these years are release dates of some Star Wars movie?</string>
@@ -446,10 +447,10 @@
     <string name="radio_button_question_43_answer_4">LUCAS GAVE JACKSON A PURPLE LIGHTSABER.</string>
     <string name="radio_button_question_44">What were Anakin Skywalker\'s last words in \'Return of the Jedi\'?</string>
     <string name="radio_button_right_answer_44">1</string>
-    <string name="radio_button_question_44_answer_1">YOU WERE RIGHT ABOUT ME. TELL YOUR SISTER ... YOU WERE RIGHT.</string>
+    <string name="radio_button_question_44_answer_1">YOU WERE RIGHT ABOUT ME. TELL YOUR SISTER &#8230; YOU WERE RIGHT.</string>
     <string name="radio_button_question_44_answer_2">I\'M SORRY.</string>
     <string name="radio_button_question_44_answer_3">MAY THE FORCE BE WITH YOU.</string>
-    <string name="radio_button_question_44_answer_4">YOU ARE THE LAST OF THE JEDI. THE FORCE RUNS STRONG IN YOU. PASS ON ... WHAT YOU HAVE LEARNED.</string>
+    <string name="radio_button_question_44_answer_4">YOU ARE THE LAST OF THE JEDI. THE FORCE RUNS STRONG IN YOU. PASS ON &#8230; WHAT YOU HAVE LEARNED.</string>
     <string name="radio_button_question_45">Who said \"And I thought they smelled bad on the outside\"?</string>
     <string name="radio_button_right_answer_45">4</string>
     <string name="radio_button_question_45_answer_1">PRINCESS LEIA</string>
