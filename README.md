@@ -24,6 +24,8 @@ If you want to preview how it works, you can check these two video files (captur
 [![Landscape orientation](https://github.com/dburgosp/EducationalApp/blob/master/video_preview_landscape.jpg?raw=true)](https://www.youtube.com/watch?v=IMxO_mxPjrQ)
 [![Portrait orientation](https://github.com/dburgosp/EducationalApp/blob/master/video_preview_portrait.jpg?raw=true)](https://www.youtube.com/watch?v=Xj1wRTntAZY)
 
+# Project Specification
+
 ## Layout
 
 1. **Overall Layout**. App contains 4 - 10 questions, including at least one check box, one radio button, and one text entry.
@@ -33,7 +35,7 @@ If you want to preview how it works, you can check these two video files (captur
    * Text sizes are defined in sp.
    * Lengths are defined in dp.
    * Padding and margin is used appropriately, such that the views are not crammed up against each other.
-5. **View variety**. The app includes at least four of the following Views: TextView, ImageView, Button, Checkbox, EditText, LinearLayout, RelativeLayout, ScrollView, RadioButton, RadioGroup. If applicable, the app uses nested ViewGroups to reduce the complexity of the layout.
+5. **View variety**. The app includes at least four of the following Views: [TextView](https://developer.android.com/reference/android/widget/TextView.html), [ImageView](https://developer.android.com/reference/android/widget/ImageView.html), [Button](https://developer.android.com/reference/android/widget/Button.html), [Checkbox](https://developer.android.com/reference/android/widget/CheckBox.html), [EditText](https://developer.android.com/reference/android/widget/EditText.html), [LinearLayout](https://developer.android.com/reference/android/widget/LinearLayout.html), [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html), [ScrollView](https://developer.android.com/reference/android/widget/ScrollView.html), [RadioButton](https://developer.android.com/reference/android/widget/RadioButton.html), [RadioGroup](https://developer.android.com/reference/android/widget/RadioGroup.html). If applicable, the app uses nested ViewGroups to reduce the complexity of the layout.
 6. **Rotation**. The app gracefully handles displaying all the content on screen when rotated. Either by updating the layout, adding a scrollable feature or some other mechanism that adheres to Android development guidelines.
 
 ## Functionality
