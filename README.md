@@ -19,7 +19,7 @@ Some additional resources I used for this app:
 * Adding “fade” effect for audio clips: https://audiotrimmer.com
 
 
-If you want to see how it works, you can check these two video files (captured from Windows 10 desktop using the keys combination *Windows logo key + G*):
+If you want to preview how it works, you can check these two video files (captured from Windows 10 desktop using the keys combination *Windows logo key + G*):
 
 [![Landscape orientation](https://github.com/dburgosp/EducationalApp/blob/master/video_preview_landscape.jpg?raw=true)](https://www.youtube.com/watch?v=IMxO_mxPjrQ)
 [![Portrait orientation](https://github.com/dburgosp/EducationalApp/blob/master/video_preview_portrait.jpg?raw=true)](https://www.youtube.com/watch?v=Xj1wRTntAZY)
